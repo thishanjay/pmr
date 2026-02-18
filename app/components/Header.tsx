@@ -3,14 +3,14 @@ import Navbar from "./Navbar";
 
 const Header = () => {
   return (
-    <div className=" mt-10 items-center">
-      <div className="flex justify-between ml-10">
-        <Image src="/uop_crest.png" alt="uop crest" width={100} height={100} />
+    <div className=" mt-10">
+      <div className="flex flex-col md:flex-row items-center md:justify-between ml-4 md:ml-10 gap-4 text-center md:text-left">
+        <Image src="/uop_crest.png" alt="uop crest" width={80} height={80} className="md:w-[100px] md:h-[100px]"/>
         <div>
-          <h1 className="text-4xl font-bold">
+          <h1 className="text-2xl md:text-4xl font-bold">
             Peradeniya Management Review (PMR)
           </h1>
-          <h3 className="font-semibold italic">
+          <h3 className="text-sm md:text-lg font-semibold italic">
             Join the Faculty of Management
           </h3>
         </div>
