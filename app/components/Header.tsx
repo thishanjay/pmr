@@ -14,7 +14,11 @@ const Header = () => {
             Join the Faculty of Management
           </h3>
         </div>
-        <Image src="/moon-stone.png" alt="uom logo" width={50} height={50} />
+        
+        {/* Added 'hidden md:block' to control visibility */}
+        <div className="hidden md:block">
+          <Image src="/moon-stone.png" alt="uom logo" width={50} height={50} />
+        </div>
       </div>
 
       <Navbar />
