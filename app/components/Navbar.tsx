@@ -56,7 +56,7 @@ const Navbar = () => {
           </ul>
 
           <div className="w-full lg:w-64">
-            <SearchBar />
+            <SearchBar articles={[]} />
           </div>
         </div>
       </div>
