@@ -8,25 +8,23 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
-    { name: "PMR Home", href: "/" },
-    { name: "Scope of PMR", href: "/scope" },
-    { name: "Manuscript Submission", href: "/submission" },
+    { name: "Home", href: "/" },
+    { name: "Scope", href: "/scope" },
+    { name: "Submissions", href: "/submission" },
     { name: "Editorial Board", href: "/editorial-board" },
-    { name: "Download Articles", href: "/downloads" },
+    { name: "Downloads", href: "/downloads" },
     { name: "Call for Papers", href: "/call-for-papers" },
-    { name: "Contact Information", href: "/contact" },
+    { name: "Contact Us", href: "/contact" },
   ];
 
   return (
     <nav className="bg-red-900 p-4 lg:p-6 mt-6">
       {/* 1. Main Container: Handles the horizontal layout on desktop */}
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row lg:items-center lg:justify-between">
-        
         {/* 2. Header: Logo and Mobile Toggle */}
         <div className="flex justify-between items-center">
-          
-          <button 
-            className="text-white lg:hidden text-2xl focus:outline-none" 
+          <button
+            className="text-white lg:hidden text-2xl focus:outline-none"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
           >
@@ -35,17 +33,17 @@ const Navbar = () => {
         </div>
 
         {/* 3. Links and SearchBar Wrapper */}
-        <div className={`
+        <div
+          className={`
           ${isOpen ? "flex" : "hidden"} 
-          lg:flex flex-col lg:flex-row lg:items-center 
-          w-full lg:w-auto gap-6 mt-4 lg:mt-0
-        `}>
-          
-          <ul className="flex flex-col lg:flex-row gap-4 lg:gap-6 text-white font-medium text-sm lg:text-base">
+          lg:flex flex-col lg:flex-row lg:items-center w-full lg:w-auto gap-6 mt-4 lg:mt-0
+        `}
+        >
+          <ul className="flex flex-col lg:flex-row gap-6 lg:gap-8 text-white font-medium text-sm lg:text-base">
             {navLinks.map((link) => (
-              <li key={link.href}>
-                <Link 
-                  href={link.href} 
+              <li key={link.href} className="px-2 lg:px-0">
+                <Link
+                  href={link.href}
                   className="hover:text-gray-300 transition block py-1 lg:py-0 whitespace-nowrap"
                   onClick={() => setIsOpen(false)}
                 >
