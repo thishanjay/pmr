@@ -20,7 +20,8 @@ const Navbar = () => {
   return (
     <nav className="bg-red-900 p-4 lg:p-6 mt-6">
       {/* 1. Main Container: Handles the horizontal layout on desktop */}
-      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row lg:items-center lg:justify-between">
+      {/* max-w-7xl mx-auto flex flex-col lg:flex-row lg:items-center lg:justify-between */}
+      <div className="mx-auto flex flex-col lg:flex-row lg:items-center lg:justify-center">
         {/* 2. Header: Logo and Mobile Toggle */}
         <div className="flex justify-between items-center">
           <button
@@ -32,7 +33,7 @@ const Navbar = () => {
           </button>
         </div>
 
-        {/* 3. Links and SearchBar Wrapper */}
+        {/* 3. Links and SearchBar Wrapper */} 
         <div
           className={`
           ${isOpen ? "flex" : "hidden"} 
@@ -53,9 +54,9 @@ const Navbar = () => {
             ))}
           </ul>
 
-          <div className="w-full lg:w-64">
+          {/* <div className="w-full lg:w-64">
             <SearchBar articles={[]} />
-          </div>
+          </div> */}
         </div>
       </div>
     </nav>
