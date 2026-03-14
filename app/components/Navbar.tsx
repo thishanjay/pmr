@@ -20,7 +20,6 @@ const Navbar = () => {
   return (
     <nav className="bg-red-900 p-4 lg:p-6 mt-6">
       {/* 1. Main Container: Handles the horizontal layout on desktop */}
-      {/* max-w-7xl mx-auto flex flex-col lg:flex-row lg:items-center lg:justify-between */}
       <div className="mx-auto flex flex-col lg:flex-row lg:items-center lg:justify-center">
         {/* 2. Header: Logo and Mobile Toggle */}
         <div className="flex justify-between items-center">
@@ -40,7 +39,8 @@ const Navbar = () => {
           lg:flex flex-col lg:flex-row lg:items-center w-full lg:w-auto gap-6 mt-4 lg:mt-0
         `}
         >
-          <ul className="flex flex-col lg:flex-row gap-6 lg:gap-8 text-white font-medium text-sm lg:text-base">
+          {/* flex flex-col lg:flex-row gap-6 lg:gap-8 text-white font-medium text-sm lg:text-base */}
+          <ul className="flex flex-col lg:flex-row gap-4 lg:gap-18 text-white">
             {navLinks.map((link) => (
               <li key={link.href} className="px-2 lg:px-0">
                 <Link

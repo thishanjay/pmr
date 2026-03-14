@@ -17,7 +17,7 @@ const Header = () => {
         
         {/* Added 'hidden md:block' to control visibility */}
         <div className="hidden md:block">
-          <Image src="/moon-stone.png" alt="uom logo" width={50} height={50} />
+          <Image src="/moon-stone.png" alt="uom logo" width={100} height={50} />
         </div>
       </div>
 
