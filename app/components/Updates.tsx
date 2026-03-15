@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { ChevronLeft, ChevronRight } from "lucide-react"; 
 
 const updates = [
   {
@@ -20,17 +21,23 @@ const updates = [
 const Updates = () => {
   const [current, setCurrent] = useState(0);
 
-  // ✅ Auto slide every 5 seconds
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % updates.length);
-    }, 5000);
+  const nextSlide = () => {
+    setCurrent((prev) => (prev + 1) % updates.length);
+  };
 
+  const prevSlide = () => {
+    setCurrent((prev) => (prev === 0 ? updates.length - 1 : prev - 1));
+  };
+
+  useEffect(() => {
+    const interval = setInterval(nextSlide, 5000);
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <div className="w-full mx-auto mt-10">
+    // w-full mx-auto mt-10 relative group
+    <div className="lg:mx-10 mt-10 relative group">
+      {/* Container with Link */}
       <Link href={updates[current].link}>
         <div
           className="relative h-[400px] rounded-xl overflow-hidden shadow-lg bg-cover bg-center flex items-center justify-center cursor-pointer transition-all duration-700 ease-in-out"
@@ -50,6 +57,22 @@ const Updates = () => {
           </div>
         </div>
       </Link>
+
+      {/* Left Arrow */}
+      <button
+        onClick={prevSlide}
+        className="absolute top-1/2 left-4 -translate-y-1/2 z-20 bg-white/20 hover:bg-white/40 text-white p-2 rounded-full transition-all opacity-0 group-hover:opacity-100"
+      >
+        <ChevronLeft size={30} />
+      </button>
+
+      {/* Right Arrow */}
+      <button
+        onClick={nextSlide}
+        className="absolute top-1/2 right-4 -translate-y-1/2 z-20 bg-white/20 hover:bg-white/40 text-white p-2 rounded-full transition-all opacity-0 group-hover:opacity-100"
+      >
+        <ChevronRight size={30} />
+      </button>
 
       {/* Dots */}
       <div className="flex justify-center mt-4 gap-2">
