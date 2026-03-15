@@ -6,48 +6,60 @@ export default function Home() {
       <div>
         <Updates />
       </div>
-      <div className="px-8 py-12 max-w-6xl mx-auto">
-        {/* Title Section */}
-        <h1 className="text-4xl font-bold text-red-900 mb-6">
-          Peradeniya Management Review (PMR)
-        </h1>
+      <div className="px-8 py-12 m-2 rounded-2xl bg-gray-100">
+        <div className="flex flex-col lg:flex-row gap-4">
+          {/* Card 1 */}
+          <div className="bg-white p-6 rounded-2xl shadow-2xl lg:p-12">
+            <h1 className="text-4xl font-bold text-red-900 mb-6">
+              Peradeniya Management Review (PMR)
+            </h1>
 
-        <p className="text-lg text-gray-700 mb-6">
-          Peradeniya Management Review (PMR) is the journal of the
-          <span className="font-semibold">
-            {" "}
-            Faculty of Management, University of Peradeniya, Sri Lanka.
-          </span>
-        </p>
+            <p className="text-lg text-gray-700 mb-6">
+              Peradeniya Management Review (PMR) is the journal of the
+              <span className="font-semibold">
+                {" "}
+                Faculty of Management, University of Peradeniya, Sri Lanka.
+              </span>
+            </p>
 
-        {/* About Section */}
-        <div className="space-y-4 text-gray-800">
-          <ul className="list-disc pl-6 space-y-2">
-            <li>Published bi-annually.</li>
-            <li>Covers Management and Accounting & Finance.</li>
-            <li>
-              Publishes:
-              <ul className="list-disc pl-6 mt-2 space-y-1">
-                <li>Research articles (theoretical and applied)</li>
-                <li>Review articles</li>
-                <li>Book reviews</li>
+            {/* About Section */}
+            <div className="space-y-4 text-gray-800">
+              <ul className="list-disc pl-6 space-y-2">
+                <li>Published bi-annually.</li>
+                <li>Covers Management and Accounting & Finance.</li>
+                <li>
+                  Publishes:
+                  <ul className="list-disc pl-6 mt-2 space-y-1">
+                    <li>Research articles (theoretical and applied)</li>
+                    <li>Review articles</li>
+                    <li>Book reviews</li>
+                  </ul>
+                </li>
+                <li>Open to researchers from Sri Lanka and overseas.</li>
+                <li>
+                  Articles from Economics and other Social Sciences are accepted
+                  if clearly linked to Management or Accounting & Finance.
+                </li>
+                <li>
+                  Selection is based on theoretical significance and practical
+                  relevance.
+                </li>
+                <li>Available in both print and online formats.</li>
+                <li>The online version is freely accessible to all readers.</li>
               </ul>
-            </li>
-            <li>Open to researchers from Sri Lanka and overseas.</li>
-            <li>
-              Articles from Economics and other Social Sciences are accepted if
-              clearly linked to Management or Accounting & Finance.
-            </li>
-            <li>
-              Selection is based on theoretical significance and practical
-              relevance.
-            </li>
-            <li>Available in both print and online formats.</li>
-            <li>The online version is freely accessible to all readers.</li>
-          </ul>
+            </div>
+          </div>
+
+          {/* Card 2 Recent articles */}
+
+          <div className="bg-white p-6 rounded-2xl shadow-2xl lg:p-12 mt-10 lg:mt-0">
+            <h1 className="text-2xl font-bold text-red-900 mb-6">
+              Recent Articles
+            </h1>
+          </div>
         </div>
 
-        {/* SLJOL Section */}
+        {/* SLJOL Section - card 3 */}
         <div className="mt-10 p-6 bg-gray-100 rounded-lg shadow-sm">
           <h2 className="text-2xl font-semibold text-red-900 mb-3">
             Sri Lanka Journals OnLine (SLJOL)
@@ -80,6 +92,7 @@ export default function Home() {
             </a>
           </p>
         </div>
+        {/* card 3 end */}
       </div>
     </>
   );
