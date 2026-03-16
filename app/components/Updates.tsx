@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { ChevronLeft, ChevronRight } from "lucide-react"; 
 
+// carousel
 const updates = [
   {
     title: "New Issue Published – Jan 2026",

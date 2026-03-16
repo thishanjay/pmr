@@ -1,11 +1,13 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import SearchBar from "./SearchBar";
 import { useState } from "react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
 
   const navLinks = [
     { name: "Home", href: "/" },
@@ -32,7 +34,7 @@ const Navbar = () => {
           </button>
         </div>
 
-        {/* 3. Links and SearchBar Wrapper */} 
+        {/* 3. Links and SearchBar Wrapper */}
         <div
           className={`
           ${isOpen ? "flex" : "hidden"} 
@@ -45,7 +47,11 @@ const Navbar = () => {
               <li key={link.href} className="px-2 lg:px-0">
                 <Link
                   href={link.href}
-                  className="hover:text-gray-300 transition block py-1 lg:py-0 whitespace-nowrap"
+                  className={`hover:text-gray-300 transition block py-1 lg:py-0 whitespace-nowrap ${
+                    pathname === link.href
+                      ? "border-b-2 border-red-950 pb-2"
+                      : ""
+                  }`}
                   onClick={() => setIsOpen(false)}
                 >
                   {link.name}
