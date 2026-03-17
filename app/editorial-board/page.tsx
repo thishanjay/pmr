@@ -1,64 +1,80 @@
 import Image from "next/image";
+import { Mail, ArrowRight } from "lucide-react";
 
-// 1. Updated Interface to include image
+// 1. Updated Interface to include email
 interface MemberCardProps {
   name: string;
   role?: string;
   link: string;
-  image?: string; // Optional image path
+  image?: string;
+  email: string; // Added email
 }
 
-const MemberCard: React.FC<MemberCardProps> = ({ name, role, link, image }) => (
-  <a
-    href={link}
-    target="_blank"
-    rel="noopener noreferrer"
-    className="group p-6 bg-white border-t-4 border-red-900 shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 text-center flex flex-col justify-between h-80"
-  >
-    <div>
-      <div className="relative w-24 h-24 mx-auto mb-4 overflow-hidden rounded-full border-2 border-gray-100 group-hover:border-red-900 transition-colors">
-        <Image
-          // Use the dynamic image prop, or the placeholder if not provided
-          // IMPORTANT: Remove "public/" from the path
-          src={image || "/person1.jpg"}
-          alt={name}
-          fill
-          className="object-cover"
-        />
-      </div>
-
-      <h3 className="text-lg font-bold text-gray-900 group-hover:text-red-900 transition-colors leading-tight">
-        {name}
-      </h3>
+const MemberCard: React.FC<MemberCardProps> = ({ name, role, link, image, email }) => (
+  <div className="group bg-white rounded-2xl shadow-md hover:shadow-2xl transition-all duration-500 overflow-hidden flex flex-col h-[420px] border border-gray-100">
+    
+    {/* 70% Height - Image Section */}
+    <div className="relative h-[70%] w-full overflow-hidden bg-gray-200">
+      <Image
+        src={image || "/person1.jpg"}
+        alt={name}
+        fill
+        className="object-cover transition-transform duration-700 group-hover:scale-110"
+      />
+      {/* Subtle Overlay */}
+      <div className="absolute inset-0 bg-linear-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      
       {role && (
-        <p className="text-xs text-red-800 font-semibold uppercase tracking-wider mt-2">
+        <div className="absolute top-4 left-4 bg-red-900 text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full shadow-lg">
           {role}
-        </p>
+        </div>
       )}
     </div>
 
-    <div className="mt-4 text-xs font-medium text-blue-600 opacity-0 group-hover:opacity-100 transition-opacity">
-      View Profile →
+    {/* 30% Height - Info Section */}
+    <div className="h-[30%] p-4 flex flex-col justify-between bg-white border-t-4 border-red-900">
+      <div>
+        <h3 className="text-md font-bold text-gray-900 truncate group-hover:text-red-900 transition-colors">
+          {name}
+        </h3>
+        
+        {/* Email Row */}
+        <div className="flex items-center gap-2 mt-1 text-gray-500 hover:text-blue-600 transition-colors">
+          <Mail size={14} className="shrink-0" />
+          <a href={`mailto:${email}`} className="text-xs truncate font-medium">
+            {email}
+          </a>
+        </div>
+      </div>
+
+      <a
+        href={link}
+        className="flex items-center justify-between text-[11px] font-bold uppercase tracking-tighter text-gray-400 group-hover:text-red-900 transition-all"
+      >
+        <span>View Academic Profile</span>
+        <ArrowRight size={14} className="transform group-hover:translate-x-1 transition-transform" />
+      </a>
     </div>
-  </a>
+  </div>
 );
 
 export default function EditorialBoard() {
-  // 3. Added image field to data (Update these paths to your actual images in /public)
-  type Person = { name: string; link: string; role?: string; image: string };
+  type Person = { name: string; link: string; role?: string; image: string; email: string };
 
   const coEditors: Person[] = [
     {
-      name: "Professor Richard Wickramaratne",
+      name: "Prof. Richard Wickramaratne",
       role: "Co-Editor",
       link: "#",
       image: "/person1.jpg",
+      email: "richardw@mgt.pdn.ac.lk"
     },
     {
       name: "Dr. S. Maheshwaran",
       role: "Co-Editor",
       link: "#",
       image: "/person1.jpg",
+      email: "mahesh@mgt.pdn.ac.lk"
     },
   ];
 
@@ -67,40 +83,36 @@ export default function EditorialBoard() {
     role: "Managing Editor",
     link: "#",
     image: "/person1.jpg",
+    email: "wijethunga@mgt.pdn.ac.lk"
   };
 
   const boardMembers: Person[] = [
-    { name: "Dr. Nagaraja Agilan", link: "#", image: "/images/agilan.jpg" },
-    {
-      name: "Ms. Wathsala Priyadharshani",
-      link: "#",
-      image: "/person1.jpg",
-    },
-    {
-      name: "Dr. Anushka Hewa Heenipellage",
-      link: "#",
-      image: "/person1.jpg",
-    },
-    { name: "Ms. Subagya Dasanayake", link: "#", image: "/person1.jpg" },
-    { name: "Ms. Niwarthana", link: "#", image: "/person1.jpg" },
+    { name: "Dr. Nagaraja Agilan", link: "#", image: "/person1.jpg", email: "agilan@mgt.pdn.ac.lk" },
+    { name: "Ms. Wathsala Priyadharshani", link: "#", image: "/person1.jpg", email: "wathsala@mgt.pdn.ac.lk" },
+    { name: "Dr. Anushka Hewa Heenipellage", link: "#", image: "/person1.jpg", email: "anushka@mgt.pdn.ac.lk" },
+    { name: "Ms. Subagya Dasanayake", link: "#", image: "/person1.jpg", email: "subagya@mgt.pdn.ac.lk" },
+    { name: "Ms. Niwarthana", link: "#", image: "/person1.jpg", email: "niwarthana@mgt.pdn.ac.lk" },
   ];
 
   return (
-    <div className="px-6 py-12 max-w-6xl mx-auto bg-gray-50 min-h-screen">
-      <div className="border-b-2 border-red-900 mb-10 pb-4 text-center md:text-left">
-        <h1 className="text-4xl font-extrabold text-red-900">
+    <div className="px-6 py-12 max-w-7xl mx-auto bg-gray-50 min-h-screen">
+      <div className="border-b-8 border-red-900 mb-12 pb-6">
+        <h1 className="text-5xl font-extrabold text-red-900 tracking-tight">
           Editorial Board
         </h1>
-        <p className="text-gray-600 mt-2">Peradeniya Management Review (PMR)</p>
+        <div className="flex items-center gap-2 mt-2">
+           <span className="h-1 w-12 bg-red-900/30"></span>
+           <p className="text-gray-600 font-medium uppercase tracking-widest text-sm">Peradeniya Management Review</p>
+        </div>
       </div>
 
       {/* Leadership Section */}
-      <section className="mb-16">
-        <h2 className="text-2xl font-bold text-gray-800 mb-8 flex items-center justify-center md:justify-start">
-          <span className="hidden md:block w-8 h-1 bg-red-900 mr-3"></span>
+      <section className="mb-20">
+        <h2 className="text-2xl font-bold text-gray-900 mb-8 flex items-center">
+          <span className="w-2 h-8 bg-red-900 mr-3 rounded-full"></span>
           Executive Editorial Team
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
           {coEditors.map((editor, index) => (
             <MemberCard key={index} {...editor} />
           ))}
@@ -110,11 +122,11 @@ export default function EditorialBoard() {
 
       {/* Board Members Section */}
       <section>
-        <h2 className="text-2xl font-bold text-gray-800 mb-8 flex items-center justify-center md:justify-start">
-          <span className="hidden md:block w-8 h-1 bg-red-900 mr-3"></span>
-          Board Members
+        <h2 className="text-2xl font-bold text-gray-900 mb-8 flex items-center">
+           <span className="w-2 h-8 bg-red-900 mr-3 rounded-full"></span>
+           Board Members
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {boardMembers.map((member, index) => (
             <MemberCard key={index} {...member} />
           ))}
