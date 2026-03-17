@@ -1,4 +1,6 @@
+import CallForArticles from "./components/CallForArticles";
 import RecentArticles from "./components/RecentArticles";
+import TopFive from "./components/TopFive";
 import Updates from "./components/Updates";
 
 export default function Home() {
@@ -111,7 +113,7 @@ export default function Home() {
         </div>
 
         {/* Card 3: SLJOL Section */}
-        <div className="mt-12 bg-white rounded-3xl shadow-xl overflow-hidden border-b-8 border-red-900">
+        <div className="mt-12 bg-white rounded-3xl shadow-xl overflow-hidden border-t-6 border-red-900">
           <div className="p-8 lg:p-12">
             <div className="flex flex-col md:flex-row gap-8 items-start">
               {/* Content Side */}
@@ -164,6 +166,16 @@ export default function Home() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+        {/* Call for articles */}
+        <div>
+          <CallForArticles />
+        </div>
+        {/* Top 5 researches */}
+        <div className="bg-white mt-6 p-8 border-t-6 border-red-900 rounded-3xl">
+          <div>
+            <TopFive />
           </div>
         </div>
       </div>

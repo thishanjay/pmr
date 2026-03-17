@@ -65,8 +65,9 @@ const RecentArticles = () => {
         </div>
 
         {/* Article Details - Styled like the main card info */}
-        <div className="text-center mt-6 px-2 min-h-[90px]">
-          <h3 className="text-lg font-bold text-gray-900 leading-tight mb-2">
+        {/* Article Details - Fixed Version */}
+        <div className="text-center mt-6 px-2 min-h-[100px] flex flex-col justify-center">
+          <h3 className="text-xl font-bold text-gray-900 leading-snug mb-2 whitespace-nowrap md:whitespace-normal">
             {Articles[current].title}
           </h3>
           <p className="text-sm text-gray-600 italic leading-relaxed">
@@ -98,17 +99,19 @@ const RecentArticles = () => {
               key={index}
               onClick={() => setCurrent(index)}
               className={`h-1.5 rounded-full transition-all duration-300 ${
-                current === index ? "w-8 bg-red-900" : "w-2 bg-gray-300 hover:bg-gray-400"
+                current === index
+                  ? "w-8 bg-red-900"
+                  : "w-2 bg-gray-300 hover:bg-gray-400"
               }`}
               aria-label={`Go to slide ${index + 1}`}
             />
           ))}
         </div>
       </div>
-      
+
       {/* Bottom CTA to match the "Selection Criteria" banner style */}
-      <Link 
-        href="/downloads" 
+      <Link
+        href="/downloads"
         className="mt-6 text-center py-2 bg-gray-50 border border-gray-200 rounded-xl text-red-900 text-xs font-bold uppercase tracking-widest hover:bg-red-50 transition-colors"
       >
         View All Issues
