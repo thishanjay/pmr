@@ -7,35 +7,35 @@ const topFive = [
     title: "Impact of Digital Marketing on Consumer Behavior",
     description:
       "An empirical study focusing on the retail sector in Sri Lanka during 2025.",
-    backgroundImage: "/research/digital-marketing.jpg",
+    backgroundImage: "/updates/images.jpeg",
     link: "/research/1",
   },
   {
     title: "Financial Literacy Among SMEs",
     description:
       "Exploring the correlation between financial knowledge and business sustainability.",
-    backgroundImage: "/research/sme-finance.jpg",
+    backgroundImage: "/updates/images.jpeg",
     link: "/research/2",
   },
   {
     title: "Sustainable Supply Chain Management",
     description:
       "A review of green logistics practices in the South Asian manufacturing industry.",
-    backgroundImage: "/research/supply-chain.jpg",
+    backgroundImage: "/updates/images.jpeg",
     link: "/research/3",
   },
   {
     title: "Human Resource Management in Remote Work",
     description:
       "Analyzing employee engagement strategies in post-pandemic work environments.",
-    backgroundImage: "/research/remote-hr.jpg",
+    backgroundImage: "/updates/images.jpeg",
     link: "/research/4",
   },
   {
     title: "Corporate Governance and Firm Performance",
     description:
       "Evidence from listed companies in the Colombo Stock Exchange.",
-    backgroundImage: "/research/corporate-gov.jpg",
+    backgroundImage: "/updates/images.jpeg",
     link: "/research/5",
   },
 ];
