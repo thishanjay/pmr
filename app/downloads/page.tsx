@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link"; // Better for Next.js routing
+import FilterBar from "../components/FilterBar";
 
 export default function DownloadArticles() {
   const volumes = [
@@ -14,6 +15,9 @@ export default function DownloadArticles() {
 
   return (
     <div className="px-8 py-12 max-w-7xl mx-auto">
+      <div className="mb-8">
+        <FilterBar />
+      </div>
       <div className="flex items-center gap-3 mb-10">
         <div className="h-10 w-1.5 bg-red-900 rounded-full" />
         <h1 className="text-4xl font-bold text-red-900 tracking-tight">Download Articles</h1>
