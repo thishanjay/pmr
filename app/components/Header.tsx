@@ -3,8 +3,10 @@ import Navbar from "./Navbar";
 
 const Header = () => {
   return (
-    <div className=" mt-10">
-      <div className="flex flex-col md:flex-row items-center md:justify-between ml-4 md:ml-10 gap-4 text-center md:text-left">
+    //  mt-10
+    <div className="">
+      {/* flex flex-col md:flex-row items-center md:justify-between ml-4 md:ml-10 gap-4 text-center md:text-left */}
+      <div className="">
         <Image src="/uop_crest.png" alt="uop crest" width={80} height={80} className="md:w-[100px] md:h-[100px]"/>
         <div>
           <h1 className="text-2xl md:text-4xl font-bold">
@@ -17,7 +19,7 @@ const Header = () => {
         
         {/* Added 'hidden md:block' to control visibility */}
         <div className="hidden md:block">
-          <Image src="/moon-stone.png" alt="uom logo" width={100} height={50} />
+          <Image src="/moon-stone.png" alt="uom logo" width={50} height={50} />
         </div>
       </div>
 
