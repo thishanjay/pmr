@@ -20,7 +20,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="bg-red-900 p-4 lg:p-6 mt-6">
+    <nav className="bg-red-900 p-4 lg:p-6">
       {/* 1. Main Container: Handles the horizontal layout on desktop */}
       <div className="mx-auto flex flex-col lg:flex-row lg:items-center lg:justify-center">
         {/* 2. Header: Logo and Mobile Toggle */}
