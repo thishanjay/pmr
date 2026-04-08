@@ -2,6 +2,8 @@ import CallForArticles from "./components/CallForArticles";
 import RecentArticles from "./components/RecentArticles";
 import TopFive from "./components/TopFive";
 import Updates from "./components/Updates";
+import React from "react";
+import { Send } from "lucide-react";
 
 export default function Home() {
   return (
@@ -36,7 +38,7 @@ export default function Home() {
                 </span>
               </p>
 
-              {/* Info Grid - Replacing plain bullets */}
+              {/* Info Grid */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="space-y-6">
                   <div className="flex gap-4">
@@ -90,8 +92,7 @@ export default function Home() {
                       <h3 className="font-bold text-gray-900">Inclusivity</h3>
                       <p className="text-gray-600">
                         Welcoming local and overseas researchers.
-                        Interdisciplinary work (Economics/Social Science) is
-                        accepted.
+                        Interdisciplinary work is accepted.
                       </p>
                     </div>
                   </div>
@@ -99,9 +100,23 @@ export default function Home() {
               </div>
 
               {/* Selection Criteria Banner */}
-              <div className="mt-12 p-4 bg-red-900 rounded-xl text-white text-center text-sm font-medium">
+              <div className="mt-12 p-4 bg-red-900/5 border border-red-900/10 rounded-xl text-red-900 text-center text-sm font-semibold italic">
                 Selection is strictly based on theoretical significance and
                 practical relevance.
+              </div>
+
+              {/* NEW: Submit Action Section */}
+              <div className="mt-10 flex flex-col items-center gap-4">
+                <button className="group flex items-center gap-3 bg-red-900 text-white px-10 py-4 rounded-xl font-bold shadow-lg transition-all hover:bg-red-800 hover:shadow-2xl hover:-translate-y-1 active:scale-95">
+                  <Send
+                    size={18}
+                    className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"
+                  />
+                  Submit Your Manuscript
+                </button>
+                <p className="text-gray-400 text-xs uppercase tracking-widest font-medium">
+                  Next Issue: June 2024
+                </p>
               </div>
             </div>
           </div>
