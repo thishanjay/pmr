@@ -41,7 +41,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="bg-red-900 p-4 shadow-md">
+    <nav className="bg-red-900 py-2 px-4 shadow-md">
       <div className="mx-auto flex flex-col lg:flex-row lg:items-center lg:justify-center">
         {/* Mobile Toggle Button */}
         <div className="flex justify-between items-center lg:hidden">
@@ -57,25 +57,25 @@ const Navbar = () => {
         {/* Links and SearchBar Wrapper */}
         <div
           className={`
-          ${isOpen ? "flex" : "hidden"} 
-          lg:flex flex-col lg:flex-row lg:items-center w-full lg:w-auto gap-6 mt-4 lg:mt-0
+          ${isOpen ? "flex" : "hidden"}
+          lg:flex flex-col lg:flex-row lg:items-center lg:justify-between w-full max-w-7xl
         `}
         >
-          <ul className="flex flex-col lg:flex-row gap-2 lg:gap-8">
+          <ul className="flex flex-col lg:flex-row gap-1 lg:gap-2 xl:gap-4">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
 
               return (
-                <li key={link.href} className="px-2 lg:px-0">
+                <li key={link.href}>
                   <Link
                     href={link.href}
                     onClick={() => setIsOpen(false)}
                     className={`
-                      flex items-center gap-2 py-2 lg:py-1 transition-all duration-200 whitespace-nowrap font-bold
+                      flex items-center gap-2 py-3 lg:py-2 px-4 lg:px-3 xl:px-4 transition-all duration-200 whitespace-nowrap font-bold rounded-lg lg:rounded-none
                       ${
                         isActive
-                          ? "text-white border-b-2 border-white"
-                          : "text-red-200 hover:text-white"
+                          ? "text-white border-b-2 border-white lg:bg-white/10"
+                          : "text-red-200 hover:text-white hover:bg-white/5 lg:hover:bg-transparent"
                       }
                     `}
                   >
@@ -89,7 +89,7 @@ const Navbar = () => {
           </ul>
 
           {/* Search Bar Section */}
-          <div className="lg:ml-8 w-full lg:w-64">
+          <div className="w-full lg:w-50 xl:w-60 lg:shrink-0 mt-4 lg:mt-0">
             <SearchBar articles={[]} />
           </div>
         </div>
