@@ -105,22 +105,6 @@ export default function Home() {
                 Selection is strictly based on theoretical significance and
                 practical relevance.
               </div>
-
-              {/* NEW: Submit Action Section */}
-              <div className="mt-10 flex flex-col items-center gap-4">
-                <Link href="/submission" className="w-full sm:w-auto">
-                  <button className="group flex items-center gap-3 bg-red-900 text-white px-10 py-4 rounded-xl font-bold shadow-lg transition-all hover:bg-red-800 hover:shadow-2xl hover:-translate-y-1 active:scale-95">
-                    <Send
-                      size={18}
-                      className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"
-                    />
-                    Submit Your Manuscript
-                  </button>
-                </Link>
-                <p className="text-gray-400 text-xs uppercase tracking-widest font-medium">
-                  Next Issue: June 2024
-                </p>
-              </div>
             </div>
           </div>
 
