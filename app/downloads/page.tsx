@@ -4,13 +4,13 @@ import FilterBar from "../components/FilterBar";
 
 export default function DownloadArticles() {
   const volumes = [
-    { title: "Volume 1 - Issue 1", image: "/volume/volume1.jpg", link: "/downloads/v1-i1" },
-    { title: "Volume 1 - Issue 2", image: "/volume/volume1.jpg", link: "/downloads/v1-i2" },
-    { title: "Volume 2 - Issue 1", image: "/volume/volume1.jpg", link: "/downloads/v2-i1" },
-    { title: "Volume 2 - Issue 2", image: "/volume/volume1.jpg", link: "/downloads/v2-i2" },
-    { title: "Volume 3 - Issue 1", image: "/volume/volume1.jpg", link: "/downloads/v3-i1" },
-    { title: "Volume 3 - Issue 2", image: "/volume/volume1.jpg", link: "/downloads/v3-i2" },
-    { title: "Volume 4 - Issue 1", image: "/volume/volume1.jpg", link: "/downloads/v4-i1" },
+    { title: "Volume 1 - Issue 1", image: "/volume/volume1/issue1.jpg", link: "/downloads/v1-i1" },
+    { title: "Volume 1 - Issue 2", image: "/volume/volume1/issue2.jpg", link: "/downloads/v1-i2" },
+    { title: "Volume 2 - Issue 1", image: "/volume/volume2/issue1.jpg", link: "/downloads/v2-i1" },
+    { title: "Volume 2 - Issue 2", image: "/volume/volume2/issue2.jpg", link: "/downloads/v2-i2" },
+    { title: "Volume 3 - Issue 1", image: "/volume/volume3/issue1.jpg", link: "/downloads/v3-i1" },
+    { title: "Volume 3 - Issue 2", image: "/volume/volume3/issue2.jpg", link: "/downloads/v3-i2" },
+    { title: "Volume 4 - Issue 1", image: "/volume/volume4/issue1.jpg", link: "/downloads/v4-i1" },
   ];
 
   return (

@@ -34,9 +34,24 @@ export const papersData: PapersDatabase = {
   "v1-i2": [
     // Add your Issue 2 papers here...
     { 
-        title: "Example Title for Issue 2", 
-        author: "Author Name", 
-        link: "/pdfs/v1-i2/article01.pdf" 
+        title: "Modelling a Marketing-based Solution for the Paddy Marketing Crisis in Sri Lanka: Case of the Upuldeniya Warehouse Storage", 
+        author: "R.P.I.R. Prasanna", 
+        link: "/pdfs/v1-i2/1.pdf" 
+    },
+    { 
+        title: "The Effect of Green Practices on Tourists’ Behavioral Intention: A Study of Hoteliers in Central Province of Sri Lanka", 
+        author: "R.S.S.W. Arachchi", 
+        link: "/pdfs/v1-i2/2.pdf" 
+    },
+    { 
+        title: "Stakeholder Orientation for Social Value Creation: A Case Study", 
+        author: "B.A.N. Eranda, B.A.I.R. Sumanarathna", 
+        link: "/pdfs/v1-i2/3.pdf" 
+    },
+    { 
+        title: "Exploring Entrepreneurial Capabilities for International Entrepreneurship: A Study of International Entrepreneurship Sense-making Narratives in Sri Lanka", 
+        author: "N. D. L. De Silva, D. M. Mudalige", 
+        link: "/pdfs/v1-i2/4.pdf" 
     },
   ],
 };
