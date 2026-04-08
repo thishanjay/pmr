@@ -1,18 +1,18 @@
 export default function Footer() {
   return (
     <footer className="bg-red-900 text-white mt-12">
-      <div className="max-w-6xl mx-auto px-8 py-12 grid md:grid-cols-4 gap-8">
+      <div className="max-w-6xl mx-auto px-8 py-12 grid md:grid-cols-3 gap-8">
         {/* Column 1: Quick Links */}
         <div>
           <h3 className="font-bold text-lg mb-4">Quick Links</h3>
           <ul className="space-y-2 text-gray-200">
             <li>
-              <a href="#" className="hover:underline">
+              <a href="/downloads" className="hover:underline">
                 Research Articles
               </a>
             </li>
             <li>
-              <a href="#" className="hover:underline">
+              <a href="https://mgt.pdn.ac.lk/" className="hover:underline">
                 Management Website
               </a>
             </li>
@@ -22,7 +22,7 @@ export default function Footer() {
               </a>
             </li>
             <li>
-              <a href="#" className="hover:underline">
+              <a href="https://www.pdn.ac.lk/journals/" className="hover:underline">
                 Journals
               </a>
             </li>
@@ -32,7 +32,7 @@ export default function Footer() {
               </a>
             </li>
             <li>
-              <a href="#" className="hover:underline">
+              <a href="/editorial-board" className="hover:underline">
                 Editorial Board
               </a>
             </li>
@@ -59,7 +59,7 @@ export default function Footer() {
         </div>
 
         {/* Column 3: Google Map (Optional) */}
-        <div className="md:col-span-2">
+        <div className="md:col-span-1">
           <h3 className="font-bold text-lg mb-4">Faculty Location</h3>
           <div className="w-full h-48">
             <iframe

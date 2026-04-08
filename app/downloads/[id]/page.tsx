@@ -1,7 +1,8 @@
 import { papersData } from "@/data/papers";
 import { notFound } from "next/navigation";
-import { FileText, Download, ArrowLeft } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
+import IssuePaperSearch from "./IssuePaperSearch";
 
 export default async function IssuePage({
   params,
@@ -42,38 +43,7 @@ export default async function IssuePage({
           </p>
         </div>
 
-        {/* Papers List */}
-        <div className="space-y-6">
-          {papers.map((paper, index) => (
-            <div
-              key={index}
-              className="group bg-white p-6 rounded-2xl shadow-md border border-gray-100 flex flex-col md:flex-row justify-between items-start md:items-center gap-6 transition-all hover:shadow-lg"
-            >
-              <div className="flex items-start gap-4">
-                <div className="p-3 bg-red-50 rounded-xl text-red-900 shrink-0">
-                  <FileText size={28} />
-                </div>
-                <div>
-                  <h3 className="font-bold text-xl text-gray-900 leading-tight">
-                    {paper.title}
-                  </h3>
-                  <p className="text-gray-500 italic mt-2 text-sm font-medium">
-                    By {paper.author}
-                  </p>
-                </div>
-              </div>
-
-              <a
-                href={paper.link}
-                className="w-full md:w-auto flex items-center justify-center gap-2 bg-red-900 text-white px-6 py-3 rounded-xl font-bold hover:bg-red-800 transition-all shadow-md active:scale-95 whitespace-nowrap"
-                download
-              >
-                <Download size={18} />
-                Download PDF
-              </a>
-            </div>
-          ))}
-        </div>
+        <IssuePaperSearch papers={papers} />
       </div>
     </div>
   );
