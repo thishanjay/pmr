@@ -1,5 +1,6 @@
 "use client";
-import { useState } from "react";
+
+import Script from "next/script";
 
 type Article = {
   id: number;
@@ -11,32 +12,53 @@ type SearchBarProps = {
 };
 
 const SearchBar = ({ articles }: SearchBarProps) => {
-  const [query, setQuery] = useState("");
-
-  const handleSearch = () => {
-    const results = articles.filter((article) =>
-      article.title.toLowerCase().includes(query.toLowerCase())
-    );
-
-    console.log(results);
-  };
-
   return (
-    <div className="flex items-center gap-2">
-      <input
-        type="text"
-        placeholder="Search articles..."
-        value={query}
-        onChange={(e) => setQuery(e.target.value)}
-        className="bg-white border px-4 py-2 rounded-md w-64"
+    <div className="w-full max-w-sm min-w-[200px]">
+      {/* 1. Next.js optimized Script loading */}
+      <Script 
+        src="https://cse.google.com/cse.js?cx=61fbe5b3199b3464d" 
+        strategy="afterInteractive" 
       />
 
-      <button
-        onClick={handleSearch}
-        className="bg-black text-white px-4 py-2 rounded-md"
-      >
-        Search
-      </button>
+      {/* 2. The Google Search Element */}
+      <div className="gcse-search"></div>
+
+      {/* 3. CSS Overrides to make it look modern */}
+      <style jsx global>{`
+        /* Remove the white background and borders from the container */
+        .gsc-control-cse {
+          background-color: transparent !important;
+          border: none !important;
+          padding: 0 !important;
+        }
+
+        /* Style the input box to match your design */
+        .gsc-input-box {
+          border-radius: 6px !important;
+          border: 1px solid #ddd !important;
+          overflow: hidden !important;
+        }
+
+        /* Style the Search Button */
+        button.gsc-search-button-v2 {
+          background-color: #000000 !important;
+          border: none !important;
+          border-radius: 6px !important;
+          margin-left: 4px !important;
+          padding: 10px 16px !important;
+        }
+
+        /* Hide the Google Branding if you want a cleaner look */
+        .gcsc-branding {
+          display: none !important;
+        }
+          
+        /* Align the "X" clear button */
+        .gsst_a {
+          padding-top: 8px !important;
+          cursor: pointer !important;
+        }
+      `}</style>
     </div>
   );
 };
