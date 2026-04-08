@@ -32,7 +32,6 @@ export const papersData: PapersDatabase = {
     },
   ],
   "v1-i2": [
-    // Add your Issue 2 papers here...
     { 
         title: "Modelling a Marketing-based Solution for the Paddy Marketing Crisis in Sri Lanka: Case of the Upuldeniya Warehouse Storage", 
         author: "R.P.I.R. Prasanna", 
@@ -52,6 +51,37 @@ export const papersData: PapersDatabase = {
         title: "Exploring Entrepreneurial Capabilities for International Entrepreneurship: A Study of International Entrepreneurship Sense-making Narratives in Sri Lanka", 
         author: "N. D. L. De Silva, D. M. Mudalige", 
         link: "/pdfs/v1-i2/4.pdf" 
+    },
+  ],
+  "v2-i1": [
+    { 
+        title: "The Role of Positive Framing in the Relationship between Career Commitment and Career Success", 
+        author: "R. James", 
+        link: "/pdfs/v2-i1/1.pdf" 
+    },
+    { 
+        title: "Time Orientation & Sequential Coherence as Novel Determinants of Open Innovation Performance", 
+        author: "S.R. Yapa, R. Senathiraja, J. Poesche & I. Kauranen", 
+        link: "/pdfs/v2-i1/2.pdf" 
+    },
+    { 
+        title: "Organizational Culture & Competitive Advantage in ICT Industry in Sri Lanka", 
+        author: "T.S.S. Fernando & G.A.T.R. Perera", 
+        link: "/pdfs/v2-i1/3.pdf" 
+    },
+    { 
+        title: "Determinants of Capital Structure;A Study of Listed Banks in Colombo Stock Exchange in Sri Lanka", 
+        author: "N.L.M. Abeysekara", 
+        link: "/pdfs/v2-i1/4.pdf" 
+    },
+    { 
+        title: "Impact of Total Quality Management on Operational Performance", 
+        author: "	B.T.D.N. Senarath, G.C.I. Gunarathne, T.S.S.Fernando", 
+        link: "/pdfs/v2-i1/5.pdf" 
+    },{ 
+        title: "Consumers’ Willingness to Choose a National Payment Card: A Stated Preference Approach", 
+        author: "U. Attanayake & P. Neelawala", 
+        link: "/pdfs/v2-i1/6.pdf" 
     },
   ],
 };
