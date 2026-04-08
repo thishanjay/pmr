@@ -13,11 +13,11 @@ type SearchBarProps = {
 
 const SearchBar = ({ articles }: SearchBarProps) => {
   return (
-    <div className="w-full max-w-sm min-w-[200px]">
+    <div className="w-full min-w-[300px] min-h-[40px]">
       {/* 1. Next.js optimized Script loading */}
       <Script 
         src="https://cse.google.com/cse.js?cx=61fbe5b3199b3464d" 
-        strategy="afterInteractive" 
+        strategy="beforeInteractive" 
       />
 
       {/* 2. The Google Search Element */}
