@@ -135,3 +135,5 @@ export default function EditorialBoard() {
     </div>
   );
 }
+
+//use cms?
