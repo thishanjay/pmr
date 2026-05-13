@@ -91,8 +91,8 @@ export default function ContactUs() {
                       <div className="p-3 bg-gray-800 rounded-xl text-red-400 group-hover/item:bg-red-900 transition-colors">
                         <Mail size={20} />
                       </div>
-                      <a href="mailto:editorpmr@gmail.com" className="text-gray-300 font-medium hover:text-white transition-colors">
-                        editorpmr@gmail.com
+                      <a href="mailto:pmr@mgt.pdn.ac.lk" className="text-gray-300 font-medium hover:text-white transition-colors">
+                        pmr@mgt.pdn.ac.lk
                       </a>
                     </div>
                   </div>

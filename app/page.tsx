@@ -50,10 +50,7 @@ export default function Home() {
                       <h3 className="font-bold text-gray-900">
                         Frequency & Scope
                       </h3>
-                      <p className="text-gray-600">
-                        Published bi-annually. Covers Management, Accounting,
-                        and Finance disciplines.
-                      </p>
+                      <p className="text-gray-600">Published bi-annually.</p>
                     </div>
                   </div>
                   <div className="flex gap-4">
@@ -65,8 +62,8 @@ export default function Home() {
                         Publication Types
                       </h3>
                       <p className="text-gray-600">
-                        Theoretical/applied research, comprehensive review
-                        articles, and insightful book reviews.
+                        Theoretical/applied research, concept papers, review
+                        articles, and book reviews
                       </p>
                     </div>
                   </div>
@@ -80,8 +77,9 @@ export default function Home() {
                     <div>
                       <h3 className="font-bold text-gray-900">Open Access</h3>
                       <p className="text-gray-600">
-                        Available in print and online. The online version is
-                        freely accessible to global readers.
+                        Available online and accessible to global readers
+                        through Sri Lanka Journals OnLine (SLJOL) & Google
+                        Scholar
                       </p>
                     </div>
                   </div>
@@ -90,10 +88,10 @@ export default function Home() {
                       4
                     </div>
                     <div>
-                      <h3 className="font-bold text-gray-900">Inclusivity</h3>
+                      <h3 className="font-bold text-gray-900">Scope</h3>
                       <p className="text-gray-600">
-                        Welcoming local and overseas researchers.
-                        Interdisciplinary work is accepted.
+                        Management related research including Interdisciplinary
+                        & Multidisciplinary work
                       </p>
                     </div>
                   </div>
@@ -102,8 +100,8 @@ export default function Home() {
 
               {/* Selection Criteria Banner */}
               <div className="mt-12 p-4 bg-red-900/5 border border-red-900/10 rounded-xl text-red-900 text-center text-sm font-semibold italic">
-                Selection is strictly based on theoretical significance and
-                practical relevance.
+                Selection is based on a rigorous double blind peer review
+                process
               </div>
             </div>
           </div>
@@ -132,10 +130,13 @@ export default function Home() {
                     PMR is proudly indexed and hosted on the SLJOL platform.
                   </p>
                   <p>
-                    SLJOL provides access to Sri Lankan published research and
-                    increases worldwide visibility of indigenous scholarship. It
-                    is a comprehensive database covering a wide range of
-                    academic disciplines.
+                    SLJOL is a database of journals published in Sri Lanka,
+                    covering the full range of academic disciplines. The
+                    objective of SLJOL is to give greater visibility to the
+                    participating journals, and to the research they convey. It
+                    is managed by the National Science Foundation of Sri Lanka
+                    and was developed in collaboration with INASP. It is now
+                    part of the Ubiquity Press Partner Network.
                   </p>
                 </div>
               </div>

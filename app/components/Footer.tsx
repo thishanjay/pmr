@@ -8,22 +8,20 @@ export default function Footer() {
           <ul className="space-y-2 text-gray-200">
             <li>
               <a href="/downloads" className="hover:underline">
-                Research Articles
+                All Issues
               </a>
             </li>
             <li>
               <a href="https://mgt.pdn.ac.lk/" className="hover:underline">
-                Management Website
+                FOM Website
               </a>
             </li>
             <li>
-              <a href="#" className="hover:underline">
-                Articles
-              </a>
-            </li>
-            <li>
-              <a href="https://www.pdn.ac.lk/journals/" className="hover:underline">
-                Journals
+              <a
+                href="https://www.pdn.ac.lk/journals/"
+                className="hover:underline"
+              >
+                UOP Journals
               </a>
             </li>
             <li>
@@ -52,8 +50,8 @@ export default function Footer() {
           <p className="text-gray-200 mb-1">Call: 081-2385707</p>
           <p className="text-gray-200">
             Email:{" "}
-            <a href="mailto:editorpmr@gmail.com" className="hover:underline">
-              editorpmr@gmail.com
+            <a href="mailto:pmr@mgt.pdn.ac.lk" className="hover:underline">
+              pmr@mgt.pdn.ac.lk
             </a>
           </p>
         </div>

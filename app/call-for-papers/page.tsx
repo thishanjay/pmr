@@ -80,10 +80,10 @@ export default function CallForPapers() {
                   </p>
                 </div>
                 <a 
-                  href="mailto:editorpmr@gmail.com" 
+                  href="mailto:pmr@mgt.pdn.ac.lk" 
                   className="inline-block text-center bg-red-900 hover:bg-red-800 text-white font-bold py-3 px-6 rounded-xl transition-all shadow-lg active:scale-95"
                 >
-                  editorpmr@gmail.com
+                  pmr@mgt.pdn.ac.lk
                 </a>
               </div>
 

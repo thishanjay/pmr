@@ -1,5 +1,6 @@
 import React from "react";
 import { Send } from "lucide-react"; // Matching your icon set
+import Link from "next/link";
 
 const CallForArticles = () => {
   return (
@@ -24,10 +25,12 @@ const CallForArticles = () => {
           </p>
         </div>
 
-        <button className="flex items-center justify-center gap-2 bg-red-900 text-white px-8 py-3 rounded-xl font-bold transition-all hover:bg-red-800 active:scale-95 shadow-lg shrink-0">
-          <Send size={18} />
-          Submit Now
-        </button>
+        <Link href="/submission">
+          <button className="flex items-center justify-center gap-2 bg-red-900 text-white px-8 py-3 rounded-xl font-bold transition-all hover:bg-red-800 active:scale-95 shadow-lg shrink-0">
+            <Send size={18} />
+            Submit Now
+          </button>
+        </Link>
       </div>
     </div>
   );

@@ -56,7 +56,7 @@ const TopFive = () => {
             <GraduationCap size={24} />
           </div>
           <h2 className="text-3xl font-bold text-gray-900 tracking-tight">
-            Recent Researches
+            Recently Published Articles
           </h2>
         </div>
 
@@ -85,7 +85,7 @@ const TopFive = () => {
                 <h3 className="text-xl font-bold mb-3 leading-tight group-hover:text-red-100 transition-colors">
                   {research.title}
                 </h3>
-                
+
                 <p className="text-sm text-gray-200 leading-relaxed line-clamp-2 mb-4 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
                   {research.description}
                 </p>
