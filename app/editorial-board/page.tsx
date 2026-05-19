@@ -137,3 +137,4 @@ export default function EditorialBoard() {
 }
 
 //use cms?
+//How to use cms
