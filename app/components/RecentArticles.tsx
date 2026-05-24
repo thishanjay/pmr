@@ -116,9 +116,14 @@ const RecentArticles = () => {
       >
         View All Issues
       </Link>
-      <button className="mt-4 text-center py-2 bg-red-900 border border-gray-200 rounded-xl text-white text-xs font-bold uppercase tracking-widest hover:bg-red-800 transition-colors">
+      <a
+        href="/author-guidlines/Guidelines for Authors.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="mt-4 text-center py-2 bg-red-900 border border-gray-200 rounded-xl text-white text-xs font-bold uppercase tracking-widest hover:bg-red-800 transition-colors"
+      >
         Author Guidelines
-      </button>
+      </a>
     </div>
   );
 };
