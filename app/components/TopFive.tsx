@@ -54,24 +54,27 @@ const PublishedArticles = () => {
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
           {/* Left Side */}
           <div className="lg:col-span-3">
-            <div className="grid md:grid-cols-2 gap-x-10">
+            <div className="grid md:grid-cols-2 gap-6">
               {recentArticles.map((article, index) => (
-                <div key={index} className="py-6 border-b border-gray-200">
-                  <span className="inline-block text-xs font-bold bg-gray-200 text-gray-800 px-2 py-1 rounded mb-3">
+                <div
+                  key={index}
+                  className="bg-white border border-gray-200 rounded-3xl p-6 shadow-xl transition-all hover:shadow-2xl"
+                >
+                  <span className="inline-flex items-center justify-center text-xs font-bold bg-gray-100 text-gray-800 px-3 py-1 rounded-full mb-4">
                     Article
                   </span>
 
                   <Link href={article.link}>
-                    <h3 className="text-lg font-bold text-blue-700 hover:text-blue-900 transition-colors leading-snug">
+                    <h3 className="text-lg font-bold text-gray-900 hover:text-blue-900 transition-colors leading-snug">
                       {article.title}
                     </h3>
                   </Link>
 
-                  <p className="text-sm text-blue-600 mt-2">
+                  <p className="text-sm text-blue-600 mt-3">
                     {article.authors}
                   </p>
 
-                  <p className="text-sm text-gray-600 mt-2">
+                  <p className="text-sm text-gray-600 mt-3">
                     Journal Name, {article.volume}
                   </p>
                 </div>
