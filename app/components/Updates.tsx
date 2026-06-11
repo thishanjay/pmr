@@ -37,11 +37,11 @@ const Updates = () => {
 
   return (
     // w-full mx-auto mt-10 relative group
-    <div className="lg:mx-10 mt-10 relative group">
+    <div className="relative group">
       {/* Container with Link */}
       <Link href={updates[current].link}>
         <div
-          className="relative h-[400px] rounded-xl overflow-hidden shadow-lg bg-cover bg-center flex items-center justify-center cursor-pointer transition-all duration-700 ease-in-out"
+          className="relative h-[400px] overflow-hidden shadow-lg bg-cover bg-center flex items-center justify-center cursor-pointer transition-all duration-700 ease-in-out"
           style={{
             backgroundImage: `url(${updates[current].image})`,
           }}
