@@ -1,63 +1,35 @@
 import React from "react";
 import Link from "next/link";
 import { ArrowUpRight, FileText } from "lucide-react";
+import { papersData } from "@/data/papers";
 
-const recentArticles = [
-  {
-    title: "Impact of Digital Marketing on Consumer Behavior",
-    authors: "John Perera, Amanda Silva",
-    volume: "Volume 12",
-    link: "/research/1",
-  },
-  {
-    title: "Financial Literacy Among SMEs",
-    authors: "Nimal Fernando, Sarah Joseph",
-    volume: "Volume 12",
-    link: "/research/2",
-  },
-  {
-    title: "Sustainable Supply Chain Management",
-    authors: "Kasun Jayawardena, Anne Peries",
-    volume: "Volume 12",
-    link: "/research/3",
-  },
-  {
-    title: "Human Resource Management in Remote Work",
-    authors: "Ravindu Silva, Maria Gomez",
-    volume: "Volume 12",
-    link: "/research/4",
-  },
-  {
-    title: "Corporate Governance and Firm Performance",
-    authors: "Tharushi Fernando, Kevin Lee",
-    volume: "Volume 12",
-    link: "/research/5",
-  },
-  {
-    title: "AI Adoption in Higher Education",
-    authors: "Dinuka Perera, Lisa Brown",
-    volume: "Volume 12",
-    link: "/research/6",
-  },
-];
+// Extract all papers and get the 5 most recent ones
+const getAllPapers = () => {
+  const allPapers: any[] = [];
 
-const mostRead = [
-  {
-    title: "Distributionally Robust Optimization",
-    authors: "Daniel Kuhn, Wolfram Wiesemann",
-    volume: "Volume 11",
-    link: "/research/read",
-  },
-];
+  // Iterate through all volumes/issues in order and collect papers
+  Object.entries(papersData).forEach(([volume, papers]) => {
+    papers.forEach((paper) => {
+      allPapers.push({
+        title: paper.title,
+        authors: paper.author,
+        volume: `Volume ${volume.split("-")[0].substring(1)}`,
+        link: paper.link,
+      });
+    });
+  });
 
-const mostCited = [
-  {
-    title: "The Immersed Boundary Method",
-    authors: "Charles S. Peskin",
-    volume: "Volume 10",
-    link: "/research/cited",
-  },
-];
+  // Return the first 6 papers (or 5 if you want exactly 5)
+  return allPapers.slice(0, 6);
+};
+
+const recentArticles = getAllPapers();
+
+// Get most read (first paper from the last volume with papers)
+const mostRead = [getAllPapers()[0]].filter(Boolean);
+
+// Get most cited (pick a notable paper, e.g., first paper overall)
+const mostCited = [getAllPapers()[1]].filter(Boolean);
 
 const PublishedArticles = () => {
   return (
@@ -84,10 +56,7 @@ const PublishedArticles = () => {
           <div className="lg:col-span-3">
             <div className="grid md:grid-cols-2 gap-x-10">
               {recentArticles.map((article, index) => (
-                <div
-                  key={index}
-                  className="py-6 border-b border-gray-200"
-                >
+                <div key={index} className="py-6 border-b border-gray-200">
                   <span className="inline-block text-xs font-bold bg-gray-200 text-gray-800 px-2 py-1 rounded mb-3">
                     Article
                   </span>

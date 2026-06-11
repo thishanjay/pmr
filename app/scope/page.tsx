@@ -34,7 +34,7 @@ export default function Scope() {
                 PMR welcomes management related research including
                 interdisciplinary & multidisciplinary original
                 Theoretical/applied research, concept papers, review articles,
-                and book reviews in the following areas:
+                and book reviews in the following areas
               </p>
             </div>
 

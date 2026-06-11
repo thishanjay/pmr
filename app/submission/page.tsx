@@ -1,5 +1,12 @@
 import React from "react";
-import { Send, Mail, MapPin, CheckSquare, FileText, Download } from "lucide-react";
+import {
+  Send,
+  Mail,
+  MapPin,
+  CheckSquare,
+  FileText,
+  Download,
+} from "lucide-react";
 
 export default function Submission() {
   const checklistItems = [
@@ -55,14 +62,24 @@ export default function Submission() {
               </div>
 
               <div className="p-6 bg-gray-50 rounded-2xl border border-gray-100 flex flex-col justify-center gap-4">
-                <button className="w-full flex items-center justify-center gap-2 bg-white border-2 border-red-900 text-red-900 px-4 py-3 rounded-xl hover:bg-red-50 transition-all font-semibold hover:shadow-md">
+                <a
+                  href="/author-guidlines/Guidelines for Authors.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full flex items-center justify-center gap-2 bg-white border-2 border-red-900 text-red-900 px-4 py-3 rounded-xl hover:bg-red-50 transition-all font-semibold hover:shadow-md"
+                >
                   <Download size={20} />
                   Author Guidelines
-                </button>
-                <button className="w-full flex items-center justify-center gap-2 bg-red-900 text-white px-4 py-3 rounded-xl hover:bg-red-800 transition-all font-semibold shadow-md hover:shadow-lg hover:-translate-y-0.5">
+                </a>
+                <a
+                  href="/author-guidlines/Guidelines for Authors.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full flex items-center justify-center gap-2 bg-red-900 text-white px-4 py-3 rounded-xl hover:bg-red-800 transition-all font-semibold shadow-md hover:shadow-lg hover:-translate-y-0.5"
+                >
                   <Download size={20} />
                   Author Information Sheet
-                </button>
+                </a>
               </div>
             </div>
 

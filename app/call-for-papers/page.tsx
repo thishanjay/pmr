@@ -37,7 +37,7 @@ export default function CallForPapers() {
                   <FileText size={24} />
                 </div>
                 <div>
-                  <p className="text-xs font-bold text-gray-400 uppercase tracking-tighter">Current Issue</p>
+                  <p className="text-xs font-bold text-gray-400 uppercase tracking-tighter">Future Issue</p>
                   <p className="text-xl font-bold text-gray-900">VOL. 05, ISSUE I</p>
                 </div>
               </div>
@@ -47,7 +47,7 @@ export default function CallForPapers() {
                   <Calendar size={24} />
                 </div>
                 <div>
-                  <p className="text-xs font-bold text-gray-400 uppercase tracking-tighter">Publication Date</p>
+                  <p className="text-xs font-bold text-gray-400 uppercase tracking-tighter">Submission Date</p>
                   <p className="text-xl font-bold text-gray-900">June, 2024</p>
                 </div>
               </div>

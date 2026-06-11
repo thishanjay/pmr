@@ -25,7 +25,12 @@ export default function Footer() {
               </a>
             </li>
             <li>
-              <a href="#" className="hover:underline">
+              <a
+                href="/author-guidlines/Guidelines for Authors.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:underline"
+              >
                 Author Guidelines
               </a>
             </li>
