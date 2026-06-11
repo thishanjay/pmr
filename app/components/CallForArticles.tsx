@@ -1,5 +1,5 @@
 import React from "react";
-import { Send } from "lucide-react"; // Matching your icon set
+import { Send, Download } from "lucide-react";
 import Link from "next/link";
 
 const CallForArticles = () => {
@@ -25,12 +25,19 @@ const CallForArticles = () => {
           </p>
         </div>
 
-        <Link href="/submission">
-          <button className="flex items-center justify-center gap-2 bg-red-900 text-white px-8 py-3 rounded-xl font-bold transition-all hover:bg-red-800 active:scale-95 shadow-lg shrink-0">
-            <Send size={18} />
-            Submit Now
-          </button>
-        </Link>
+        <div className="flex flex-col gap-3 w-full md:w-64 shrink-0">
+          <Link href="/submission">
+            <button className="flex items-center justify-center gap-2 bg-red-900 text-white px-8 py-3 rounded-xl font-bold transition-all hover:bg-red-800 active:scale-95 shadow-lg shrink-0 w-full">
+              <Send size={18} />
+              Submit Now
+            </button>
+          </Link>
+          <Link href="#">
+            <button className="flex items-center justify-center gap-2 bg-red-900 text-white px-6 py-3 rounded-xl font-bold transition-all hover:bg-red-800 active:scale-95 shadow-lg shrink-0 w-full">
+              <Download size={18} /> Download Guidlines
+            </button>
+          </Link>
+        </div>
       </div>
     </div>
   );

@@ -11,7 +11,7 @@ import {
   User,
   Download,
   NotebookText,
-  Headset,
+  Phone,
 } from "lucide-react";
 
 const Navbar = () => {
@@ -37,7 +37,7 @@ const Navbar = () => {
       href: "/call-for-papers",
       icon: <NotebookText size={18} />,
     },
-    { name: "Contact Us", href: "/contact", icon: <Headset size={18} /> },
+    { name: "Contact Us", href: "/contact", icon: <Phone size={18} /> },
   ];
 
   return (
