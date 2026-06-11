@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { ChevronDown, Filter } from "lucide-react";
+import { ChevronDown, Filter, Search } from "lucide-react"; // Added Search icon
 
 export default function FilterBar() {
   const router = useRouter();
@@ -11,7 +11,6 @@ export default function FilterBar() {
 
   const handleFilter = () => {
     if (volume && issue) {
-      // Constructs the URL based on your folder structure: /downloads/v1-i1
       router.push(`/downloads/v${volume}-i${issue}`);
     }
   };
@@ -63,6 +62,17 @@ export default function FilterBar() {
         >
           Go to Issue
         </button>
+
+        {/* Placeholder Search Bar - Pushed to the right with ml-auto */}
+        <div className="ml-auto relative flex items-center">
+          <input
+            type="text"
+            placeholder="Search articles..."
+            disabled
+            className="bg-gray-100 border border-gray-200 text-gray-500 text-sm rounded-lg p-2.5 pl-10 w-64 cursor-not-allowed"
+          />
+          <Search className="absolute left-3 text-gray-400" size={18} />
+        </div>
       </div>
     </div>
   );

@@ -70,28 +70,28 @@ export default function EditorialBoard() {
       email: "richardw@mgt.pdn.ac.lk"
     },
     {
-      name: "Dr. S. Maheshwaran",
+      name: "Dr. W.M.H.U Wijethunga",
       role: "Co-Editor",
       link: "#",
       image: "/person1.jpg",
-      email: "mahesh@mgt.pdn.ac.lk"
+      email: "#"
     },
   ];
 
   const managingEditor: Person = {
-    name: "Dr. W.M.H.U Wijethunga",
+    name: "Ms. R.M.C Kumari",
     role: "Managing Editor",
     link: "#",
     image: "/person1.jpg",
-    email: "wijethunga@mgt.pdn.ac.lk"
+    email: "#"
   };
 
   const boardMembers: Person[] = [
-    { name: "Dr. Nagaraja Agilan", link: "#", image: "/person1.jpg", email: "agilan@mgt.pdn.ac.lk" },
-    { name: "Ms. Wathsala Priyadharshani", link: "#", image: "/person1.jpg", email: "wathsala@mgt.pdn.ac.lk" },
-    { name: "Dr. Anushka Hewa Heenipellage", link: "#", image: "/person1.jpg", email: "anushka@mgt.pdn.ac.lk" },
-    { name: "Ms. Subagya Dasanayake", link: "#", image: "/person1.jpg", email: "subagya@mgt.pdn.ac.lk" },
-    { name: "Ms. Niwarthana", link: "#", image: "/person1.jpg", email: "niwarthana@mgt.pdn.ac.lk" },
+    { name: "Dr. M.G.P.D. Menike", link: "#", image: "/person1.jpg", email: "#" },
+    { name: "Mr .T.S.S.Fernando", link: "#", image: "/person1.jpg", email: "#" },
+    { name: "Dr. Nagaraja Agilan", link: "#", image: "/person1.jpg", email: "#" },
+    { name: "Ms. D.M.S.M. Dasanayake", link: "#", image: "/person1.jpg", email: "#" },
+    { name: "Mr. Darshana Bandara", link: "#", image: "/person1.jpg", email: "#" },
   ];
 
   return (
