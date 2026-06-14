@@ -87,7 +87,7 @@ export default function EditorialBoard() {
   };
 
   const boardMembers: Person[] = [
-    { name: "Dr. M.G.P.D. Menike", link: "#", image: "/person1.jpg", email: "menikem@yahoo.com" },
+    { name: "Dr. M.G.P.D. Menike", link: "#", image: "/editorial-board/Menike.jpg", email: "menikem@yahoo.com" },
     { name: "Mr .T.S.S.Fernando", link: "#", image: "/person1.jpg", email: "fernandotss28@gmail.com" },
     { name: "Dr. Nagaraja Agilan", link: "#", image: "/person1.jpg", email: "#" },
     { name: "Ms. D.M.S.M. Dasanayake", link: "#", image: "/person1.jpg", email: "subagyad@pdn.ac.lk" },
