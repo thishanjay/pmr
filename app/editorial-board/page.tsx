@@ -66,15 +66,15 @@ export default function EditorialBoard() {
       name: "Prof. Richard Wickramaratne",
       role: "Co-Editor",
       link: "#",
-      image: "/person1.jpg",
-      email: "richardw@mgt.pdn.ac.lk"
+      image: "/editorial-board/Richard.jpg",
+      email: "wp_richard@yahoo.com"
     },
     {
       name: "Dr. W.M.H.U Wijethunga",
       role: "Co-Editor",
       link: "#",
-      image: "/person1.jpg",
-      email: "#"
+      image: "/editorial-board/Wijethunga.jpg",
+      email: "heshani114@yahoo.com"
     },
   ];
 
@@ -83,15 +83,15 @@ export default function EditorialBoard() {
     role: "Managing Editor",
     link: "#",
     image: "/person1.jpg",
-    email: "#"
+    email: "champikarmc@gmail.com"
   };
 
   const boardMembers: Person[] = [
-    { name: "Dr. M.G.P.D. Menike", link: "#", image: "/person1.jpg", email: "#" },
-    { name: "Mr .T.S.S.Fernando", link: "#", image: "/person1.jpg", email: "#" },
+    { name: "Dr. M.G.P.D. Menike", link: "#", image: "/person1.jpg", email: "menikem@yahoo.com" },
+    { name: "Mr .T.S.S.Fernando", link: "#", image: "/person1.jpg", email: "fernandotss28@gmail.com" },
     { name: "Dr. Nagaraja Agilan", link: "#", image: "/person1.jpg", email: "#" },
-    { name: "Ms. D.M.S.M. Dasanayake", link: "#", image: "/person1.jpg", email: "#" },
-    { name: "Mr. Darshana Bandara", link: "#", image: "/person1.jpg", email: "#" },
+    { name: "Ms. D.M.S.M. Dasanayake", link: "#", image: "/person1.jpg", email: "subagyad@pdn.ac.lk" },
+    { name: "Mr. Darshana Bandara", link: "#", image: "/person1.jpg", email: "darshanamkt@mgt.pdn.ac.lk" },
   ];
 
   return (
