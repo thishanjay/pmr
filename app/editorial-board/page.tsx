@@ -82,7 +82,7 @@ export default function EditorialBoard() {
     name: "Ms. R.M.C Kumari",
     role: "Managing Editor",
     link: "#",
-    image: "/person1.jpg",
+    image: "/editorial-board/Kumari.jpg",
     email: "champikarmc@gmail.com"
   };
 
