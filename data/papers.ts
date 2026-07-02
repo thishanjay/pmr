@@ -132,4 +132,68 @@ export const papersData: PapersDatabase = {
       link: "/pdfs/v2-i2/9.pdf"
     }
   ],
+  "v3-i1": [
+    {
+      title: "Human Resource Management Practices and Corporate Entrepreneurship: Moderating Role of Firm’s Innovative Capacity",
+      author: "P. Mathushan & N. Kengatharan",
+      link: "/pdfs/v3-i1/1.pdf"
+    },
+    {
+      title: "Key Determinants of Attitudes Towards E-HRM Adoption Behaviour: Special Reference to Non-Executive Level Employees in Apparel Sector, Sri Lanka",
+      author: "A.H. Isuru Chandradasa & K. Gayan Priyashantha",
+      link: "/pdfs/v3-i1/2.pdf"
+    },
+    {
+      title: "Facilitation of ICTs for Rural-Urban Economic Transformation in Sri Lanka",
+      author: "S.P. Jayasooriya",
+      link: "/pdfs/v3-i1/3.pdf"
+    },
+    {
+      title: "The Impact of Emotional Intelligence and Quality of Work-Life on Organizational Citizenship Behaviour",
+      author: "D.F. Dissanayake, P. Wachissara & P.O. De Silva",
+      link: "/pdfs/v3-i1/4.pdf"
+    },
+    {
+      title: "The Impact of Macroeconomic Variables on Stock Price: An ARDL Approach to Sri Lanka",
+      author: "S. Mathusha",
+      link: "/pdfs/v3-i1/5.pdf"
+    }
+  ],
+  "v3-i2": [
+    {
+      title: "Excessive Social Networking Sites Usage and Online Compulsive Game Buying: The Mediating Role of Consumer Materialism (With Special Reference to Undergraduates in Sri Lanka)",
+      author: "S.S. Saleeth & T.R. Wijesundara",
+      link: "/pdfs/v3-i2/1.pdf"
+    },
+    {
+      title: "Determinants of Commercial Banks' Lending Behavior: Evidence from Vietnam",
+      author: "Le Ngoc Thuy Trang, Do Phuong Thao & Do Thi Thanh Nhan",
+      link: "/pdfs/v3-i2/2.pdf"
+    },
+    {
+      title: "The Impact of Workers’ Remittances on Financial Development in Sri Lanka",
+      author: "A.J.F. Shifaniya",
+      link: "/pdfs/v3-i2/3.pdf"
+    },
+    {
+      title: "Macroeconomic Variables and Banking Sector Performance in Sri Lanka",
+      author: "K.H.I.S. Hettiarachchi",
+      link: "/pdfs/v3-i2/4.pdf"
+    },
+    {
+      title: "Internal Audit Practices in State Universities: Evidence from Sri Lanka",
+      author: "V. Anojan",
+      link: "/pdfs/v3-i2/5.pdf"
+    },
+    {
+      title: "The Linkage Between Ethnicity and Opportunity Recognition: A Case Study of Micro-Women Entrepreneurs",
+      author: "H.G. Wickramapathirana & S.S. Kodithuwakku",
+      link: "/pdfs/v3-i2/6.pdf"
+    },
+    {
+      title: "Exploring the Diffusion of Industry 4.0 Technologies in Apparel Supply Chains of Sri Lanka",
+      author: "K. Sachin & A.M.A.S.M. Bandara",
+      link: "/pdfs/v3-i2/7.pdf"
+    }
+  ],
 };
