@@ -1,5 +1,4 @@
 import { papersData } from "@/data/papers";
-import { notFound } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import IssuePaperSearch from "./IssuePaperSearch";
@@ -11,9 +10,8 @@ export default async function IssuePage({
 }) {
   // IMPORTANT: Next.js 15 requires awaiting params
   const { id } = await params;
-  const papers = papersData[id];
-
-  if (!papers) return notFound();
+  const papers = papersData[id] ?? [];
+  const hasIssueData = id in papersData;
 
   return (
     <div className="px-4 md:px-8 py-12 m-2">
@@ -43,7 +41,16 @@ export default async function IssuePage({
           </p>
         </div>
 
-        <IssuePaperSearch papers={papers} />
+        {hasIssueData ? (
+          <IssuePaperSearch papers={papers} />
+        ) : (
+          <div className="bg-white p-6 rounded-2xl shadow-md border border-gray-100 text-gray-600">
+            <p className="font-semibold text-gray-800 mb-2">
+              This issue is not available yet.
+            </p>
+            <p>Papers for this volume will be added soon.</p>
+          </div>
+        )}
       </div>
     </div>
   );
