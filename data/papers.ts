@@ -85,4 +85,51 @@ export const papersData: PapersDatabase = {
       link: "/pdfs/v2-i1/6.pdf"
     },
   ],
+  "v2-i2": [
+    {
+      title: "The Impact of Contextual Factors on the Adoption of Management Accounting Practices: A Study Based on Manufacturing Firms Listed in the Colombo Stock Exchange",
+      author: "M. Alfred & P.L.W. Priyadarshani",
+      link: "/pdfs/v2-i2/1.pdf"
+    },
+    {
+      title: "How Does SMEs Face Sustainability Challenges in the Competition? A Systemic Review",
+      author: "J.M.S.B. Jayasundara, P.S.K. Rajapakshe, R.P.I.R. Prasanna, E.M.S. Ekanayake, S.K.N. Gamage & G.A.K.N.J. Abeyrathne",
+      link: "/pdfs/v2-i2/2.pdf"
+    },
+    {
+      title: "An Empirical Investigation of Dynamic Trade-off Theory: Evidence from Sri Lankan Non-Financial Firms",
+      author: "J.S.D. Ford",
+      link: "/pdfs/v2-i2/3.pdf"
+    },
+    {
+      title: "Role of Employee Networking Behavior in Predicting the Relationship between Perceived Supervisor Support and Career Satisfaction",
+      author: "W.P.R. Wickramaratne",
+      link: "/pdfs/v2-i2/4.pdf"
+    },
+    {
+      title: "Impact of Lean Manufacturing Practices on Operational Performance: A Study in Sri Lankan Apparel Sector",
+      author: "S.P. Aryarathne & N.W.K. Galahitiyawe",
+      link: "/pdfs/v2-i2/5.pdf"
+    },
+    {
+      title: "A Study on the Experience of Rural Tourism Entrepreneurs’ Competitiveness during the COVID-19 Outbreak: A Phenomenological Study",
+      author: "S. Yogendran & B.A.N. Eranda",
+      link: "/pdfs/v2-i2/6.pdf"
+    },
+    {
+      title: "Impact of Television Food Advertisements on Pester Power: Parent’s Perspective on Children’s Behavior",
+      author: "T. Siriwardhana & B.S. Galdolage",
+      link: "/pdfs/v2-i2/7.pdf"
+    },
+    {
+      title: "Impact of Entrepreneurial Orientation on Global Mindset with the Mediation Effect of Dynamic Capabilities: An Examination of the Sri Lankan ICT Born-Global Firms",
+      author: "S. Yogendran & B.A.N. Eranda",
+      link: "/pdfs/v2-i2/8.pdf"
+    },
+    {
+      title: "A Conceptual Model of Merchant Intention to Use E-Money",
+      author: "Dandy Kurnia, Hotniar Siringoringo & Sudaryanto",
+      link: "/pdfs/v2-i2/9.pdf"
+    }
+  ],
 };
