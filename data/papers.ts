@@ -196,4 +196,31 @@ export const papersData: PapersDatabase = {
       link: "/pdfs/v3-i2/7.pdf"
     }
   ],
+  "v4-i1": [
+    {
+      title: "Influence of Resource Bricolage on Entrepreneurial Orientation in Family Firms in Western Province, Sri Lanka: The Moderating Role of Family Member Characteristics",
+      author: "D.M. Mudalige",
+      link: "/pdfs/v4-i1/1.pdf"
+    },
+    {
+      title: "Unveiling the Drivers of Consumers' Food Waste Behavior in Batticaloa’s Manmunai North Division",
+      author: "P. Nitharjan & S. Januca",
+      link: "/pdfs/v4-i1/2.pdf"
+    },
+    {
+      title: "The Stock Market Reaction to the Unexpected Events in Sri Lanka",
+      author: "Koperunthevy Kalainathan",
+      link: "/pdfs/v4-i1/3.pdf"
+    },
+    {
+      title: "The Relationship between Macroeconomic Variables, Economic Crisis, and Stock Market Performance",
+      author: "J.R. Nirasha Nuwandi Jayawardhana",
+      link: "/pdfs/v4-i1/4.pdf"
+    },
+    {
+      title: "The Influence of Customer Perceived Risk on Online Purchasing Intention",
+      author: "U.G.C. Lakchan & G.C. Samaraweera",
+      link: "/pdfs/v4-i1/5.pdf"
+    }
+  ],
 };
