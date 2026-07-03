@@ -10,7 +10,6 @@ interface FormData {
 }
 
 type Errors = Partial<Record<keyof FormData, string>>;
-
 export default function ContactUs() {
   const [formData, setFormData] = useState<FormData>({
     name: "",
