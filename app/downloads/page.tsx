@@ -11,6 +11,10 @@ export default function DownloadArticles() {
     { title: "Volume 3 - Issue 1", image: "/volume/volume3/issue1.jpg", link: "/downloads/v3-i1" },
     { title: "Volume 3 - Issue 2", image: "/volume/volume3/issue2.jpg", link: "/downloads/v3-i2" },
     { title: "Volume 4 - Issue 1", image: "/volume/volume4/issue1.jpg", link: "/downloads/v4-i1" },
+    { title: "Volume 4 - Issue 2", image: "/volume/volume4/issue1.jpg", link: "/downloads/v4-i2" },
+    { title: "Volume 5 - Issue 1", image: "/volume/volume4/issue1.jpg", link: "/downloads/v5-i1" },
+    { title: "Volume 5 - Issue 2", image: "/volume/volume4/issue1.jpg", link: "/downloads/v6-i1" },
+    { title: "Volume 6 - Issue 2", image: "/volume/volume4/issue1.jpg", link: "/downloads/v6-i2" },
   ];
 
   return (

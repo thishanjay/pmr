@@ -223,4 +223,97 @@ export const papersData: PapersDatabase = {
       link: "/pdfs/v4-i1/5.pdf"
     }
   ],
+  "v4-i2": [
+    {
+      title: "Factors Associated with Standard Hour Variations of Production Lines: A Case of a Sri Lankan Manufacturing Company",
+      author: "M. S. D. Senavirathna & K. P. P. Rathnamali",
+      link: "/pdfs/v4-i2/1.pdf"
+    },
+    {
+      title: "Conceptual Study on Impact of Human Resource Practices on Organizational Performance in State Universities in Sri Lanka: The Mediating Role of Employee Attitude",
+      author: "M. T. Ahamed Azhar & M. B. M. Ismail",
+      link: "/pdfs/v4-i2/2.pdf"
+    },
+    {
+      title: "Experiential Marketing for Creating Top-of-the-mind Awareness",
+      author: "K. M. M. N. K. Kangara & B. A. N. Eranda",
+      link: "/pdfs/v4-i2/3.pdf"
+    },
+    {
+      title: "Impact of Financial Distress on Financial Performance of Listed Manufacturing Companies in Sri Lanka",
+      author: "M. G. P. D. Menike",
+      link: "/pdfs/v4-i2/4.pdf"
+    }
+  ],
+  "v5-i1": [
+    {
+      title: "The Impact of Visual Merchandising on Brand Equity within the Sri Lankan Premium Apparel Retail Sector",
+      author: "C. Prabuddha & D. K. T. Dangalla",
+      link: "/pdfs/v5-i1/1.pdf"
+    },
+    {
+      title: "The Impact of Supervisor Emotional Intelligence and Supervisor Personality on Employee Job Anxiety: Job Resources Perspective",
+      author: "J. K. S. P. Somasiri & G. A. T. R. Perera",
+      link: "/pdfs/v5-i1/2.pdf"
+    },
+    {
+      title: "Exploring Challenges and Opportunities in Sri Lankan Courier Services",
+      author: "Henaka Ralalage Dilka Anjani Priyantha",
+      link: "/pdfs/v5-i1/3.pdf"
+    },
+    {
+      title: "Impact of Environmental, Social and Governance (ESG) Disclosures on Stock Returns: With Special Reference to Listed Firms in Colombo Stock Exchange",
+      author: "W. M. K. G. K. M. Nawarathne, S. Yamuna & H. M. N. K. Mudalige",
+      link: "/pdfs/v5-i1/4.pdf"
+    },
+    {
+      title: "Fintech Adoption Behaviour Among Accounting Professionals in Sri Lanka: An Analysis of User Types Before and After COVID-19",
+      author: "K. Saarankan, D. D. C. Kavinda & M. R. P. Wijesinghe",
+      link: "/pdfs/v5-i1/5.pdf"
+    }
+  ],
+  "v5-i2": [
+    {
+      title: "Conceptualizing the Relationships between Resident-Tourist Interaction, Emotional Solidarity and Destination Image",
+      author: "F. S. Nihar & W. M. H. U. Wijethunga",
+      link: "/pdfs/v5-i2/1.pdf"
+    },
+    {
+      title: "Evaluating Recommendation System Effectiveness on Customer Experience in Sri Lankan E-commerce: The Moderating Role of Shopping Goal",
+      author: "G. D. Dilshan, V. D. Udovita & M. Dhuveeshan",
+      link: "/pdfs/v5-i2/2.pdf"
+    },
+    {
+      title: "The Impact of Audit Committee Effectiveness on Key Audit Matters",
+      author: "B. R. M. M. H. T. Daskon & P. L. W. Priyadarshani",
+      link: "/pdfs/v5-i2/3.pdf"
+    },
+    {
+      title: "Leading with Heart: The Impact of Transformational Leadership on Employee Psychological Well-Being in the Hotel Industry in Sri Lanka",
+      author: "Kirushika Chandrakumar & Waruni Ayesha Edirisooriya",
+      link: "/pdfs/v5-i2/4.pdf"
+    }
+  ],
+  "v6-i1": [
+    {
+      title: "Adopting Artificial Intelligence in Apparel Supply Chains: Opportunities and Barriers in a Developing Economy",
+      author: "R. M. T. D. Rathnayaka & A. M. A. S. M. Bandara",
+      link: "/pdfs/v6-i1/1.pdf"
+    },
+    {
+      title: "Social Connectedness and Well-being: A PRISMA-Based Bibliometric & Systematic Literature Review (2015-2025)",
+      author: "S. M. R. K. Illangarathne & M. P. N. Janadari",
+      link: "/pdfs/v6-i1/2.pdf"
+    },
+    {
+      title: "Influence of Cultural Tourism on Destination Loyalty Mediation of Cultural Distance with Reference to Foreign Tourists",
+      author: "P. S. M. Arachchi & D. M. R. Dissanayake",
+      link: "/pdfs/v6-i1/3.pdf"
+    },
+    {
+      title: "Behavioral Biases in Financial Markets: A Review with Future Research Directions",
+      author: "M. G. P. D. Menike",
+      link: "/pdfs/v6-i1/4.pdf"
+    }
+  ],
 };
