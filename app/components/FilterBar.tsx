@@ -36,6 +36,8 @@ export default function FilterBar() {
             <option value="2">Volume 2</option>
             <option value="3">Volume 3</option>
             <option value="4">Volume 4</option>
+            <option value="5">Volume 5</option>
+            <option value="6">Volume 6</option>
           </select>
           <ChevronDown className="absolute right-2 top-3 text-gray-400 pointer-events-none" size={16} />
         </div>
