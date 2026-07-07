@@ -316,4 +316,26 @@ export const papersData: PapersDatabase = {
       link: "/pdfs/v6-i1/4.pdf"
     }
   ],
+  "v6-i2": [
+    {
+      title: "Consumer Ethnocentrism and Purchase Intention: A Multidimensional Analysis of Domestic Product Preference in Sri Lanka",
+      author: "D. M. P. Sewwandi & R. H. Banduge",
+      link: "/pdfs/v6-i2/1.pdf"
+    },
+    {
+      title: "Impact of Perceived Organisational Support and Organisational Politics on Employee Performance: The Mediating Role of Work Engagement of Nursing Officers in Sri Lankan Hospitals",
+      author: "M. A. M. Hussain Ali, J. Robinson & S. Gunapalan",
+      link: "/pdfs/v6-i2/2.pdf"
+    },
+    {
+      title: "From Compliance to Sustainability: Drivers and Barriers Influencing the Adoption of Waste Management Practices in Sri Lankan Textile and Apparel Industry",
+      author: "D. S. O. De Silva, A. K. D. N. Dilshani & J. M. P. M. Peiris",
+      link: "/pdfs/v6-i2/3.pdf"
+    },
+    {
+      title: "Fostering Sustainability: Assessing the Interplay of Incivility, Wellbeing, and Job Performance in the Workplace",
+      author: "Shainee Rishada Abeysekara & Widana Pathiranage Richard Wickramaratne",
+      link: "/pdfs/v6-i2/4.pdf"
+    }
+  ],
 };
