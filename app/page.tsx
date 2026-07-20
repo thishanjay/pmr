@@ -5,7 +5,7 @@ import Updates from "./components/Updates";
 import React from "react";
 import { Send } from "lucide-react";
 import Link from "next/link";
-// this
+
 export default function Home() {
   return (
     <>
