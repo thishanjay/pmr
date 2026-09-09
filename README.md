@@ -16,6 +16,45 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+## PHP API and Admin
+
+The PHP files run on a PHP/MySQL server separately from the Next.js app. Set
+`NEXT_PUBLIC_API_URL` to the public URL of the PHP `v1` directory, for example:
+
+```env
+NEXT_PUBLIC_API_URL=https://example.com/pmr-api/v1
+```
+
+Configure the PHP server with `PMR_DB_HOST`, `PMR_DB_NAME`, `PMR_DB_USER`,
+`PMR_DB_PASS`, and `PMR_ADMIN_PASSWORD_HASH`. Generate the password hash with:
+
+```bash
+php -r 'echo password_hash("replace-this-password", PASSWORD_DEFAULT), PHP_EOL;'
+```
+
+Create the editorial table before opening the admin page:
+
+```sql
+CREATE TABLE editorial_board (
+	id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	name VARCHAR(255) NOT NULL,
+	role VARCHAR(255) NOT NULL DEFAULT '',
+	email VARCHAR(255) NOT NULL,
+	profile_link VARCHAR(2048) NOT NULL DEFAULT '',
+	image_url VARCHAR(2048) NOT NULL DEFAULT '',
+	category ENUM('co_editor', 'managing_editor', 'board_member') NOT NULL,
+	display_order INT NOT NULL DEFAULT 0,
+	created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+```
+
+Assuming the PHP project is served as `/pmr-api`, use `/pmr-api/v1/editorial.php`
+for public editorial data and `/pmr-api/admin/dashboard.php` for the admin UI.
+PDF uploads use `POST /pmr-api/admin/upload-pdf.php` with a multipart form field
+named `pdf`. Files are stored in `api/uploads/pdfs`, returned below
+`/pmr-api/uploads/pdfs`, and limited to 10 MB. The PHP process needs write
+permission for that directory.
+
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
