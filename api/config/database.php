@@ -3,7 +3,7 @@
 define('DB_HOST', getenv('PMR_DB_HOST') ?: '127.0.0.1');
 define('DB_NAME', getenv('PMR_DB_NAME') ?: 'pmr_db');
 define('DB_USER', getenv('PMR_DB_USER') ?: 'root');
-define('DB_PASS', getenv('PMR_DB_PASS') ?: '');
+define('DB_PASS', getenv('PMR_DB_PASS') ?: 'CareBridge@1234');
 
 class Database {
     private static $pdo = null;
