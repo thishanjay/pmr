@@ -2,72 +2,52 @@
 
 require_once __DIR__ . '/../config/auth.php';
 require_admin();
+verify_csrf();
 
-$isDashboardRedirect = ($_POST['redirect'] ?? '') === 'dashboard.php';
+$redirect = $_POST['redirect'] ?? 'dashboard.php';
 
-function upload_response(array $payload, int $status = 200, bool $redirect = false): void
-{
-    if ($redirect) {
-        $location = $payload['success']
-            ? 'dashboard.php?uploaded=1'
-            : 'dashboard.php?upload_error=' . rawurlencode($payload['message']);
-        header('Location: ' . $location);
-        exit;
-    }
-
-    http_response_code($status);
-    header('Content-Type: application/json; charset=UTF-8');
-    echo json_encode($payload);
+if (!isset($_FILES['pdf']) || $_FILES['pdf']['error'] !== UPLOAD_ERR_OK) {
+    header('Location: ' . $redirect . '?upload_error=Please select a valid PDF file.');
     exit;
 }
 
-if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    upload_response(['success' => false, 'message' => 'Method not allowed.'], 405, $isDashboardRedirect);
+// 1. Get Volume and Issue from dashboard.php POST request
+$volume = (int)($_POST['volume'] ?? 1);
+$issue = (int)($_POST['issue'] ?? 1);
+
+$fileTmpPath = $_FILES['pdf']['tmp_name'];
+$fileName = $_FILES['pdf']['name'];
+$fileExtension = strtolower(pathinfo($fileName, PATHINFO_EXTENSION));
+
+if ($fileExtension !== 'pdf') {
+    header('Location: ' . $redirect . '?upload_error=Only PDF files are allowed.');
+    exit;
 }
 
-verify_csrf();
+// 2. Define directory based on selected Volume and Issue
+$subDirectory = "volume{$volume}/issue{$issue}/";
+$targetFolder = __DIR__ . '/../uploads/' . $subDirectory;
 
-$volume = filter_input(INPUT_POST, 'volume', FILTER_VALIDATE_INT, ['options' => ['min_range' => 1]]) ?: 1;
-$issue = filter_input(INPUT_POST, 'issue', FILTER_VALIDATE_INT, ['options' => ['min_range' => 1]]) ?: 1;
+// 3. Create folder if it doesn't exist
+if (!is_dir($targetFolder)) {
+    mkdir($targetFolder, 0755, true);
+}
 
-if (isset($_FILES['pdf'])) {
-    $file = $_FILES['pdf'];
-    if ($file['error'] !== UPLOAD_ERR_OK || !is_uploaded_file($file['tmp_name'])) {
-        upload_response(['success' => false, 'message' => 'The PDF upload failed.'], 400, $isDashboardRedirect);
-    }
+// 4. Save file with a safe filename
+$safeFileName = time() . '_' . preg_replace('/[^a-zA-Z0-9_-]/', '', pathinfo($fileName, PATHINFO_FILENAME)) . '.pdf';
+$destinationPath = $targetFolder . $safeFileName;
 
-    if ($file['size'] > 10 * 1024 * 1024) {
-        upload_response(['success' => false, 'message' => 'PDF files must be 10 MB or smaller.'], 413, $isDashboardRedirect);
-    }
+if (move_uploaded_file($fileTmpPath, $destinationPath)) {
+    require_once __DIR__ . '/../config/database.php';
+    $pdo = Database::getConnection();
 
-    $finfo = finfo_open(FILEINFO_MIME_TYPE);
-    $mime = $finfo ? finfo_file($finfo, $file['tmp_name']) : false;
-    if ($finfo) {
-        finfo_close($finfo);
-    }
+    $publicUrl = "http://localhost:8000/uploads/{$subDirectory}{$safeFileName}";
+    $stmt = $pdo->prepare("INSERT INTO articles (title, volume, issue, pdf_url) VALUES (?, ?, ?, ?)");
+    $stmt->execute([pathinfo($fileName, PATHINFO_FILENAME), $volume, $issue, $publicUrl]);
 
-    if ($mime !== 'application/pdf') {
-        upload_response(['success' => false, 'message' => 'Only PDF files are allowed.'], 400, $isDashboardRedirect);
-    }
-
-    $uploadSubdirectory = "volume{$volume}/issue{$issue}";
-    $uploadDir = __DIR__ . '/../uploads/' . $uploadSubdirectory . '/';
-    if (!is_dir($uploadDir)) {
-        if (!mkdir($uploadDir, 0755, true) && !is_dir($uploadDir)) {
-            upload_response(['success' => false, 'message' => 'Upload directory is unavailable.'], 500, $isDashboardRedirect);
-        }
-    }
-
-    $fileName = bin2hex(random_bytes(16)) . '.pdf';
-    $targetFilePath = $uploadDir . $fileName;
-
-    if (move_uploaded_file($file['tmp_name'], $targetFilePath)) {
-        $apiBasePath = rtrim(str_replace('\\', '/', dirname(dirname($_SERVER['SCRIPT_NAME']))), '/');
-        $publicUrl = $apiBasePath . '/uploads/' . $uploadSubdirectory . '/' . $fileName;
-        upload_response(['success' => true, 'file_url' => $publicUrl], 200, $isDashboardRedirect);
-    } else {
-        upload_response(['success' => false, 'message' => 'Failed to move uploaded file.'], 500, $isDashboardRedirect);
-    }
+    header('Location: ' . $redirect . '?uploaded=1');
+    exit;
 } else {
-    upload_response(['success' => false, 'message' => 'No PDF file was provided.'], 400, $isDashboardRedirect);
+    header('Location: ' . $redirect . '?upload_error=Failed to save PDF to folder.');
+    exit;
 }
