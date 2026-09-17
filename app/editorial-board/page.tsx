@@ -1,19 +1,40 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { Mail, ArrowRight } from "lucide-react";
+
+interface EditorialMember {
+  id?: number;
+  name: string;
+  email: string;
+  category: string;
+  image_url?: string;
+  link?: string;
+}
+
+interface EditorialResponse {
+  data?: {
+    co_editors?: EditorialMember[];
+    managing_editor?: EditorialMember | null;
+    board_members?: EditorialMember[];
+  };
+}
 
 interface MemberCardProps {
   name: string;
   role?: string;
-  link: string;
+  link?: string;
   image?: string;
   email: string;
 }
 
 const MemberCard: React.FC<MemberCardProps> = ({ name, role, link, image, email }) => (
   <div className="group bg-white rounded-2xl shadow-md hover:shadow-2xl transition-all duration-500 overflow-hidden flex flex-col h-[420px] border border-gray-100">
+    {/* Image Section */}
     <div className="relative h-[70%] w-full overflow-hidden bg-gray-200">
       <Image
-        src={image || "/person1.jpg"}
+        src={image && image.trim() !== "" ? image : "/person1.jpg"}
         alt={name}
         fill
         className="object-cover transition-transform duration-700 group-hover:scale-110"
@@ -26,6 +47,7 @@ const MemberCard: React.FC<MemberCardProps> = ({ name, role, link, image, email 
       )}
     </div>
 
+    {/* Info Section */}
     <div className="h-[30%] p-4 flex flex-col justify-between bg-white border-t-4 border-red-900">
       <div>
         <h3 className="text-md font-bold text-gray-900 truncate group-hover:text-red-900 transition-colors">
@@ -34,13 +56,13 @@ const MemberCard: React.FC<MemberCardProps> = ({ name, role, link, image, email 
         <div className="flex items-center gap-2 mt-1 text-gray-500 hover:text-blue-600 transition-colors">
           <Mail size={14} className="shrink-0" />
           <a href={`mailto:${email}`} className="text-xs truncate font-medium">
-            {email}
+            {email || "N/A"}
           </a>
         </div>
       </div>
 
       <a
-        href={link}
+        href={link || "#"}
         className="flex items-center justify-between text-[11px] font-bold uppercase tracking-tighter text-gray-400 group-hover:text-red-900 transition-all"
       >
         <span>View Academic Profile</span>
@@ -50,22 +72,35 @@ const MemberCard: React.FC<MemberCardProps> = ({ name, role, link, image, email 
   </div>
 );
 
-async function getEditorialData() {
-  try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/editorial.php`, {
-      cache: "no-store", // Fetch updated data on every request
-    });
-    if (!res.ok) throw new Error("Failed to fetch data");
-    const json = await res.json();
-    return json.data;
-  } catch (error) {
-    console.error(error);
-    return { co_editors: [], managing_editor: null, board_members: [] };
-  }
-}
+export default function EditorialBoardPage() {
+  const [coEditors, setCoEditors] = useState<EditorialMember[]>([]);
+  const [managingEditor, setManagingEditor] = useState<EditorialMember | null>(null);
+  const [boardMembers, setBoardMembers] = useState<EditorialMember[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
-export default async function EditorialBoard() {
-  const data = await getEditorialData();
+  useEffect(() => {
+    fetch("http://localhost:8000/v1/editorial.php", { cache: "no-store" })
+      .then((res) => {
+        if (!res.ok) throw new Error("Failed to fetch editorial board");
+        return res.json() as Promise<EditorialResponse>;
+      })
+      .then((response) => {
+        const data = response.data;
+        setCoEditors(data?.co_editors ?? []);
+        setManagingEditor(data?.managing_editor ?? null);
+        setBoardMembers(data?.board_members ?? []);
+        setLoading(false);
+      })
+      .catch((err: unknown) => {
+        console.error(err);
+        setError(err instanceof Error ? err.message : "Unable to load editorial board");
+        setLoading(false);
+      });
+  }, []);
+
+  if (loading) return <div className="p-8 text-center min-h-screen">Loading Editorial Board...</div>;
+  if (error) return <div className="p-8 text-center text-red-500 min-h-screen">Error: {error}</div>;
 
   return (
     <div className="px-6 py-12 max-w-7xl mx-auto bg-gray-50 min-h-screen">
@@ -88,11 +123,24 @@ export default async function EditorialBoard() {
           Executive Editorial Team
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-          {data.co_editors.map((editor: any) => (
-            <MemberCard key={editor.id} {...editor} role="Co-Editor" />
+          {coEditors.map((editor) => (
+            <MemberCard
+              key={editor.id || editor.name}
+              name={editor.name}
+              email={editor.email}
+              role="Co-Editor"
+              image={editor.image_url}
+              link={editor.link}
+            />
           ))}
-          {data.managing_editor && (
-            <MemberCard {...data.managing_editor} role="Managing Editor" />
+          {managingEditor && (
+            <MemberCard
+              name={managingEditor.name}
+              email={managingEditor.email}
+              role="Managing Editor"
+              image={managingEditor.image_url}
+              link={managingEditor.link}
+            />
           )}
         </div>
       </section>
@@ -104,8 +152,14 @@ export default async function EditorialBoard() {
           Board Members
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {data.board_members.map((member: any) => (
-            <MemberCard key={member.id} {...member} />
+          {boardMembers.map((member) => (
+            <MemberCard
+              key={member.id || member.name}
+              name={member.name}
+              email={member.email}
+              image={member.image_url}
+              link={member.link}
+            />
           ))}
         </div>
       </section>

@@ -27,6 +27,9 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 
 verify_csrf();
 
+$volume = filter_input(INPUT_POST, 'volume', FILTER_VALIDATE_INT, ['options' => ['min_range' => 1]]) ?: 1;
+$issue = filter_input(INPUT_POST, 'issue', FILTER_VALIDATE_INT, ['options' => ['min_range' => 1]]) ?: 1;
+
 if (isset($_FILES['pdf'])) {
     $file = $_FILES['pdf'];
     if ($file['error'] !== UPLOAD_ERR_OK || !is_uploaded_file($file['tmp_name'])) {
@@ -47,7 +50,8 @@ if (isset($_FILES['pdf'])) {
         upload_response(['success' => false, 'message' => 'Only PDF files are allowed.'], 400, $isDashboardRedirect);
     }
 
-    $uploadDir = __DIR__ . '/../uploads/pdfs/';
+    $uploadSubdirectory = "volume{$volume}/issue{$issue}";
+    $uploadDir = __DIR__ . '/../uploads/' . $uploadSubdirectory . '/';
     if (!is_dir($uploadDir)) {
         if (!mkdir($uploadDir, 0755, true) && !is_dir($uploadDir)) {
             upload_response(['success' => false, 'message' => 'Upload directory is unavailable.'], 500, $isDashboardRedirect);
@@ -59,7 +63,7 @@ if (isset($_FILES['pdf'])) {
 
     if (move_uploaded_file($file['tmp_name'], $targetFilePath)) {
         $apiBasePath = rtrim(str_replace('\\', '/', dirname(dirname($_SERVER['SCRIPT_NAME']))), '/');
-        $publicUrl = $apiBasePath . '/uploads/pdfs/' . $fileName;
+        $publicUrl = $apiBasePath . '/uploads/' . $uploadSubdirectory . '/' . $fileName;
         upload_response(['success' => true, 'file_url' => $publicUrl], 200, $isDashboardRedirect);
     } else {
         upload_response(['success' => false, 'message' => 'Failed to move uploaded file.'], 500, $isDashboardRedirect);
