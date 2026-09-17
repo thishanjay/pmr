@@ -25,11 +25,25 @@ The PHP files run on a PHP/MySQL server separately from the Next.js app. Set
 NEXT_PUBLIC_API_URL=https://example.com/pmr-api/v1
 ```
 
-Configure the PHP server with `PMR_DB_HOST`, `PMR_DB_NAME`, `PMR_DB_USER`,
-`PMR_DB_PASS`, and `PMR_ADMIN_PASSWORD_HASH`. Generate the password hash with:
+Configure the PHP server with `PMR_DB_HOST`, `PMR_DB_NAME`, `PMR_DB_USER`, and
+`PMR_DB_PASS`. Create the admin table and account before opening the admin page:
 
-```bash
-php -r 'echo password_hash("replace-this-password", PASSWORD_DEFAULT), PHP_EOL;'
+```sql
+CREATE TABLE admins (
+	id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	username VARCHAR(255) NOT NULL UNIQUE,
+	email VARCHAR(255) NOT NULL UNIQUE,
+	password_hash VARCHAR(255) NOT NULL,
+	created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+INSERT INTO admins (username, email, password_hash)
+VALUES (
+	'pmradmin',
+	'editor@mgt.pdn.ac.lk',
+	'$2y$12$HMs/SI8/xrr6Tg6imj1FFe7ajHW7oBdhOZtqd.FnTCnC.z8AuIBqC'
+)
+ON DUPLICATE KEY UPDATE username = username;
 ```
 
 Create the editorial table before opening the admin page:

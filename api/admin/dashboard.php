@@ -47,6 +47,10 @@ $members = $pdo->query("SELECT * FROM editorial_board ORDER BY id DESC")->fetchA
 
         <?php if (isset($_GET['added'])): ?>
             <div class="alert alert-success">Member added successfully.</div>
+        <?php elseif (isset($_GET['uploaded'])): ?>
+            <div class="alert alert-success">PDF uploaded successfully.</div>
+        <?php elseif (isset($_GET['upload_error'])): ?>
+            <div class="alert alert-danger"><?= htmlspecialchars($_GET['upload_error'], ENT_QUOTES, 'UTF-8') ?></div>
         <?php elseif ($error): ?>
             <div class="alert alert-danger"><?= htmlspecialchars($error, ENT_QUOTES, 'UTF-8') ?></div>
         <?php endif; ?>
@@ -76,6 +80,19 @@ $members = $pdo->query("SELECT * FROM editorial_board ORDER BY id DESC")->fetchA
             </div>
             <div class="col-12">
                 <button type="submit" name="add_member" class="btn btn-primary">Save Member</button>
+            </div>
+        </form>
+
+        <!-- Upload Journal PDF -->
+        <h4>Upload Journal PDF</h4>
+        <form method="POST" action="upload-pdf.php" enctype="multipart/form-data" class="row g-3 mb-5">
+            <input type="hidden" name="csrf_token" value="<?= htmlspecialchars(csrf_token(), ENT_QUOTES, 'UTF-8') ?>">
+            <input type="hidden" name="redirect" value="dashboard.php">
+            <div class="col-md-8">
+                <input type="file" name="pdf" accept="application/pdf" class="form-control" required>
+            </div>
+            <div class="col-md-4">
+                <button type="submit" class="btn btn-success w-100">Upload PDF</button>
             </div>
         </form>
 
